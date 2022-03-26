@@ -1,27 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AuthBackground extends StatelessWidget {
-  final Widget child;
-
-  const AuthBackground({Key? key, required this.child}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      child: Stack(
-        children: [
-          const _PurpleBox(),
-          child,
-        ],
-      ),
-    );
-  }
-}
-
-class _PurpleBox extends StatelessWidget {
-  const _PurpleBox({Key? key}) : super(key: key);
+class PurpleBox extends StatelessWidget {
+  const PurpleBox({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,39 +9,44 @@ class _PurpleBox extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      height: size.height * 0.6,
+      height: size.height * 1,
       decoration: _purpleBackground(),
       child: Stack(
         children: const [
           Positioned(
             child: _Bubble(),
-            top: 90,
+            top: 80,
             left: 30,
           ),
           Positioned(
             child: _Bubble(),
-            bottom: -20,
+            bottom: -10,
             left: 30,
           ),
           Positioned(
             child: _Bubble(),
-            top: 40,
+            top: 20,
             right: 80,
           ),
           Positioned(
             child: _Bubble(),
-            bottom: 90,
-            right: -10,
+            bottom: 250,
+            right: 15,
           ),
           Positioned(
             child: _Bubble(),
-            bottom: -48,
-            right: 30,
+            bottom: 80,
+            right: 40,
           ),
           Positioned(
             child: _Bubble(),
-            top: 130,
-            left: 150,
+            bottom: 158,
+            left: 80,
+          ),
+          Positioned(
+            child: _Bubble(),
+            top: 180,
+            left: 120,
           ),
         ],
       ),
