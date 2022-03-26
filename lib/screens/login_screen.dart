@@ -1,6 +1,7 @@
 import 'package:control_de_ansiedad/providers/login_form_provider.dart';
+import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/ui/input_decorations.dart';
-import 'package:control_de_ansiedad/widgets/auth_background.dart';
+//import 'package:control_de_ansiedad/widgets/auth_background.dart';
 import 'package:control_de_ansiedad/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +33,7 @@ class LoginScreen extends StatelessWidget {
             ],
           )),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           const Text(
             'Crear una nueva cuenta',
@@ -53,12 +54,14 @@ class _LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loginForm = Provider.of<LoginFormProvider>(context);
+    final authService = Provider.of<AuthService>(context, listen: false);
     return Form(
         key: loginForm.formKey,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Column(
           children: [
             TextFormField(
+              style: const TextStyle(color: Colors.black),
               autocorrect: false,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecorations.authInputDecoration(
@@ -67,6 +70,7 @@ class _LoginForm extends StatelessWidget {
                   prefixIcon: Icons.alternate_email_rounded),
               onChanged: (value) => loginForm.email = value,
               validator: (value) {
+                print(value);
                 String pattern =
                     r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
                 RegExp regExp = RegExp(pattern);
@@ -77,6 +81,7 @@ class _LoginForm extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             TextFormField(
+              style: const TextStyle(color: Colors.black),
               autocorrect: false,
               obscureText: true,
               keyboardType: TextInputType.emailAddress,
@@ -86,6 +91,7 @@ class _LoginForm extends StatelessWidget {
                   prefixIcon: Icons.lock_clock_rounded),
               onChanged: (value) => loginForm.password = value,
               validator: (value) {
+                print(value);
                 return (value != null && value.length >= 6)
                     ? null
                     : 'la contrasea debe ser igual o mayor a 6 caracteres';

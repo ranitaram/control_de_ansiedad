@@ -1,4 +1,5 @@
 import 'package:control_de_ansiedad/routes/routes.dart';
+import 'package:control_de_ansiedad/services/auth_services.dart';
 //import 'package:control_de_ansiedad/screens/screens.dart';
 import 'package:control_de_ansiedad/share_prefs/preferencias_usuario.dart';
 import 'package:control_de_ansiedad/theme/theme.dart';
@@ -25,18 +26,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final currentTheme = Provider.of<ThemeChanger>(context).currentTheme;
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Control de ansiedad',
-      initialRoute: 'home',
-      routes: routes,
-      theme: currentTheme,
-      // theme: ThemeData.light().copyWith(
-      //     scaffoldBackgroundColor: Colors.black,
-      //     appBarTheme:
-      //         AppBarTheme(elevation: 0, color: Colors.lightBlue[400]),
-      //     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      //         backgroundColor: Colors.lightBlue[400], elevation: 0))
+    return MultiProvider(
+      providers: [
+        //crear una instancia global del AuthService
+        ChangeNotifierProvider(create: (_) => AuthService()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Control de ansiedad',
+        initialRoute: 'login',
+        routes: routes,
+        theme: currentTheme,
+        // theme: ThemeData.light().copyWith(
+        //     scaffoldBackgroundColor: Colors.black,
+        //     appBarTheme:
+        //         AppBarTheme(elevation: 0, color: Colors.lightBlue[400]),
+        //     floatingActionButtonTheme: FloatingActionButtonThemeData(
+        //         backgroundColor: Colors.lightBlue[400], elevation: 0))
+      ),
     );
   }
 }
