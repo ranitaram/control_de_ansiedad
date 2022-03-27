@@ -84,6 +84,7 @@ class __FormState extends State<_Form> {
 
                     if (loginOk) {
                       //TODO: Navegar a otra pantala
+                      Navigator.pushReplacementNamed(context, 'home');
                     } else {
                       //mostrar alerta
                       mostrarAlerta(
