@@ -1,6 +1,8 @@
+import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/widgets/custom_logo.dart';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/boton_azul.dart';
 import '../widgets/custom_input.dart';
@@ -70,11 +72,15 @@ class __FormState extends State<_Form> {
             textController: passCtrl,
           ),
           BotonAzul(
-              text: 'Ingresar',
-              onpressed: () {
-                print(emailCtrl);
-                print(passCtrl);
-              })
+            text: 'Ingresar',
+            onpressed: () {
+              print(emailCtrl.text);
+              print(passCtrl.text);
+              final authService =
+                  Provider.of<AuthService>(context, listen: false);
+              authService.login(emailCtrl.text.trim(), passCtrl.text.trim());
+            },
+          )
         ],
       ),
     );

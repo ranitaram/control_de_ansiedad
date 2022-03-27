@@ -22,7 +22,7 @@ class CustomInput extends StatelessWidget {
       padding: EdgeInsets.only(top: 5, left: 5, bottom: 5, right: 20),
       margin: EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color.fromARGB(255, 43, 44, 94),
           borderRadius: BorderRadius.circular(30),
           boxShadow: <BoxShadow>[
             BoxShadow(
