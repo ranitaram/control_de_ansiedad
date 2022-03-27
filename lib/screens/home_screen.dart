@@ -22,17 +22,22 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: (appTheme.darkTheme) ? Colors.blue : Colors.pink,
           onPressed: () {}),
       bottomNavigationBar: ConvexAppBar(
-          backgroundColor:
-              (appTheme.darkTheme) ? Colors.black : Colors.lightBlue[300],
-          color: (appTheme.darkTheme) ? Colors.white : Colors.black,
-          items: const [
-            TabItem(
-                icon: Icons.sentiment_satisfied_alt_outlined, title: 'Animo'),
-            TabItem(icon: Icons.bar_chart_sharp, title: 'Grafica'),
-            TabItem(icon: Icons.checklist_sharp, title: 'Desafios'),
-            TabItem(icon: Icons.rate_review_rounded, title: 'Test'),
-            TabItem(icon: Icons.chat_rounded, title: 'Chat'),
-          ]),
+        backgroundColor:
+            (appTheme.darkTheme) ? Colors.black : Colors.lightBlue[300],
+        color: (appTheme.darkTheme) ? Colors.white : Colors.black,
+        items: const [
+          TabItem(icon: Icons.sentiment_satisfied_alt_outlined, title: 'Animo'),
+          TabItem(icon: Icons.bar_chart_sharp, title: 'Grafica'),
+          TabItem(icon: Icons.checklist_sharp, title: 'Desafios'),
+          TabItem(icon: Icons.rate_review_rounded, title: 'Test'),
+          TabItem(icon: Icons.chat_rounded, title: 'Chat'),
+        ],
+
+        onTap: (int i) => print('click index=$i'),
+        // if (i == 4) {
+        //   Navigator.pushReplacementNamed(context, 'usuarios');
+        // }
+      ),
     );
   }
 }
