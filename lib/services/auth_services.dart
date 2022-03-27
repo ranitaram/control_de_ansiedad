@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:control_de_ansiedad/models/login_response.dart';
 import 'package:control_de_ansiedad/models/usuario.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ class AuthService with ChangeNotifier {
     notifyListeners();
   }
 
-  Future login(String correo, String password) async {
+  Future<bool> login(String correo, String password) async {
     autenticando = true;
 
     final data = {'correo': correo, 'password': password};
@@ -27,11 +29,17 @@ class AuthService with ChangeNotifier {
     final resp = await http.post(uri,
         body: jsonEncode(data), headers: {'Content-Type': 'application/json'});
     print(resp.body);
+    autenticando = false;
 
     if (resp.statusCode == 200) {
       final loginResponse = loginResponseFromJson(resp.body);
       usuario = loginResponse.usuario;
+
+      //TODO:  guardar token en lugar seguro
+
+      return true;
+    } else {
+      return false;
     }
-    autenticando = false;
   }
 }

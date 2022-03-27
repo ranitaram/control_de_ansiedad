@@ -1,3 +1,4 @@
+import 'package:control_de_ansiedad/helpers/mostrar_alerta.dart';
 import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/widgets/custom_logo.dart';
 
@@ -76,10 +77,18 @@ class __FormState extends State<_Form> {
             text: 'Ingresar',
             onpressed: authService.autenticando
                 ? null
-                : () {
+                : () async {
                     FocusScope.of(context).unfocus();
-                    authService.login(
+                    final loginOk = await authService.login(
                         emailCtrl.text.trim(), passCtrl.text.trim());
+
+                    if (loginOk) {
+                      //TODO: Navegar a otra pantala
+                    } else {
+                      //mostrar alerta
+                      mostrarAlerta(
+                          context, 'Login incorrecto', 'Intente nuevamente');
+                    }
                   },
           )
         ],
