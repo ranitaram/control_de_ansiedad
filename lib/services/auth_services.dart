@@ -9,8 +9,17 @@ import '../global/environment.dart';
 //proceso para la autenticacion
 class AuthService with ChangeNotifier {
   late Usuario usuario;
+  bool _autenticando = false;
+
+  bool get autenticando => _autenticando;
+  set autenticando(bool valor) {
+    _autenticando = valor;
+    notifyListeners();
+  }
 
   Future login(String correo, String password) async {
+    autenticando = true;
+
     final data = {'correo': correo, 'password': password};
 
     final uri = Uri.parse('${Environment.apiUrl}/auth/login');
@@ -23,5 +32,6 @@ class AuthService with ChangeNotifier {
       final loginResponse = loginResponseFromJson(resp.body);
       usuario = loginResponse.usuario;
     }
+    autenticando = false;
   }
 }

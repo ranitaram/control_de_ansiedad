@@ -54,6 +54,7 @@ class __FormState extends State<_Form> {
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthService>(context);
     return Container(
       margin: EdgeInsets.only(top: 40),
       padding: EdgeInsets.symmetric(horizontal: 50),
@@ -73,13 +74,13 @@ class __FormState extends State<_Form> {
           ),
           BotonAzul(
             text: 'Ingresar',
-            onpressed: () {
-              print(emailCtrl.text);
-              print(passCtrl.text);
-              final authService =
-                  Provider.of<AuthService>(context, listen: false);
-              authService.login(emailCtrl.text.trim(), passCtrl.text.trim());
-            },
+            onpressed: authService.autenticando
+                ? null
+                : () {
+                    FocusScope.of(context).unfocus();
+                    authService.login(
+                        emailCtrl.text.trim(), passCtrl.text.trim());
+                  },
           )
         ],
       ),
@@ -90,7 +91,7 @@ class __FormState extends State<_Form> {
 class Labels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CustomLabels(
+    return const CustomLabels(
       ruta: 'register',
       h2: 'Crea una ahora!',
       h3: '¿No tienes una cuenta?',
