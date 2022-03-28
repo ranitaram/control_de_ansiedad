@@ -57,6 +57,10 @@ class AuthService with ChangeNotifier {
       return false;
     }
   }
+  //TODO:
+  // Future<bool> register(String nombre ,String correo, String password) async {
+
+  // }
 
   Future _guardarToken(String token) async {
     return await _storage.write(key: 'token', value: token);

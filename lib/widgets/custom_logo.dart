@@ -10,7 +10,7 @@ class CustomLogo extends StatelessWidget {
     return Center(
       child: Container(
         width: 170,
-        margin: EdgeInsets.only(top: 50),
+        margin: EdgeInsets.only(top: 35),
         child: Column(
           children: [
             Image(image: AssetImage('assets/tag-logo.png')),
