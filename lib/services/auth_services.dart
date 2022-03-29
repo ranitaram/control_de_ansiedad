@@ -1,3 +1,4 @@
+import 'package:control_de_ansiedad/models/register_response.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:control_de_ansiedad/models/login_response.dart';
 import 'package:control_de_ansiedad/models/usuario.dart';
@@ -57,10 +58,32 @@ class AuthService with ChangeNotifier {
       return false;
     }
   }
-  //TODO:
-  // Future<bool> register(String nombre ,String correo, String password) async {
 
-  // }
+  //TODO:
+  Future register(String nombre, String correo, String password) async {
+    autenticando = true;
+
+    final data = {'nombre': nombre, 'correo': correo, 'password': password};
+    final uri = Uri.parse('${Environment.apiUrl}/usuarios');
+
+    final resp = await http.post(uri,
+        body: jsonEncode(data), headers: {'Content-Type': 'application/json'});
+    print(resp.body);
+    autenticando = false;
+
+    if (resp.statusCode == 200) {
+      final loginResponse = loginResponseFromJson(resp.body);
+      usuario = loginResponse.usuario;
+
+      // guardar token en lugar seguro
+      await _guardarToken(loginResponse.token);
+
+      return true;
+    } else {
+      final respBody = jsonDecode(resp.body);
+      return respBody['msg'];
+    }
+  }
 
   Future _guardarToken(String token) async {
     return await _storage.write(key: 'token', value: token);
