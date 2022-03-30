@@ -90,12 +90,13 @@ class __FormState extends State<_Form> {
                       print(nameCtrl.text);
                       print(emailCtrl.text);
                       print(passCtrl.text);
+                      FocusScope.of(context).unfocus();
                       final registroOk = await authService.register(
                           nameCtrl.text.trim(),
                           emailCtrl.text.trim(),
                           passCtrl.text.trim());
                       if (registroOk == true) {
-                        Navigator.pushReplacementNamed(context, 'usuarios');
+                        Navigator.pushReplacementNamed(context, 'home');
                       } else {
                         mostrarAlerta(context, 'Registro incorrecto',
                             'intente nuevamente');

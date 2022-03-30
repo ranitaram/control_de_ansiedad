@@ -31,15 +31,17 @@ class CustomInput extends StatelessWidget {
                 blurRadius: 5)
           ]),
       child: TextField(
-          controller: textController,
-          autocorrect: false,
-          keyboardType: keyboardType,
-          obscureText: isPassword,
-          decoration: InputDecoration(
-              prefixIcon: Icon(icon),
-              focusedBorder: InputBorder.none,
-              border: InputBorder.none,
-              hintText: placeholder)),
+        controller: textController,
+        autocorrect: false,
+        keyboardType: keyboardType,
+        obscureText: isPassword,
+        decoration: InputDecoration(
+          prefixIcon: Icon(icon),
+          focusedBorder: InputBorder.none,
+          border: InputBorder.none,
+          hintText: placeholder,
+        ),
+      ),
     );
   }
 }

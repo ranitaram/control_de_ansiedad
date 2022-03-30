@@ -1,4 +1,3 @@
-import 'package:control_de_ansiedad/models/register_response.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:control_de_ansiedad/models/login_response.dart';
 import 'package:control_de_ansiedad/models/usuario.dart';
@@ -84,6 +83,11 @@ class AuthService with ChangeNotifier {
       return respBody['msg'];
     }
   }
+
+  // Future<bool> isLoggedIn() async {
+  //   final token = _storage.read(key: 'token') ?? '';
+
+  // }
 
   Future _guardarToken(String token) async {
     return await _storage.write(key: 'token', value: token);
