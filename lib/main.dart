@@ -1,5 +1,6 @@
 import 'package:control_de_ansiedad/routes/routes.dart';
 import 'package:control_de_ansiedad/services/auth_services.dart';
+import 'package:control_de_ansiedad/services/socket_service.dart';
 //import 'package:control_de_ansiedad/screens/screens.dart';
 import 'package:control_de_ansiedad/share_prefs/preferencias_usuario.dart';
 import 'package:control_de_ansiedad/theme/theme.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       providers: [
         //crear una instancia global del AuthService
         ChangeNotifierProvider(create: (_) => AuthService()),
+        ChangeNotifierProvider(create: (_) => SocketService()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
