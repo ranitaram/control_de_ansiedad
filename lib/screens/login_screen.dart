@@ -1,5 +1,6 @@
 import 'package:control_de_ansiedad/helpers/mostrar_alerta.dart';
 import 'package:control_de_ansiedad/services/auth_services.dart';
+import 'package:control_de_ansiedad/services/socket_service.dart';
 import 'package:control_de_ansiedad/widgets/custom_logo.dart';
 
 import 'package:flutter/material.dart';
@@ -56,6 +57,8 @@ class __FormState extends State<_Form> {
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
+    final socketService = Provider.of<SocketService>(context);
+
     return Container(
       margin: EdgeInsets.only(top: 40),
       padding: EdgeInsets.symmetric(horizontal: 50),
@@ -83,7 +86,8 @@ class __FormState extends State<_Form> {
                         emailCtrl.text.trim(), passCtrl.text.trim());
 
                     if (loginOk) {
-                      //TODO: Navegar a otra pantala
+                      socketService.connect();
+
                       Navigator.pushReplacementNamed(context, 'home');
                     } else {
                       //mostrar alerta

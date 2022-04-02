@@ -3,6 +3,7 @@ import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../services/socket_service.dart';
 import '../widgets/boton_azul.dart';
 import '../widgets/custom_input.dart';
 import '../widgets/custom_labels.dart';
@@ -59,6 +60,7 @@ class __FormState extends State<_Form> {
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
+    final socketService = Provider.of<SocketService>(context);
     return Container(
       margin: EdgeInsets.only(top: 30),
       padding: EdgeInsets.symmetric(horizontal: 50),
@@ -96,6 +98,7 @@ class __FormState extends State<_Form> {
                           emailCtrl.text.trim(),
                           passCtrl.text.trim());
                       if (registroOk == true) {
+                        socketService.connect();
                         Navigator.pushReplacementNamed(context, 'home');
                       } else {
                         mostrarAlerta(context, 'Registro incorrecto',

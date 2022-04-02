@@ -1,6 +1,6 @@
 import 'package:control_de_ansiedad/screens/chat_page.dart';
 import 'package:control_de_ansiedad/screens/home_screen.dart';
-//import 'package:control_de_ansiedad/screens/loading_screen.dart';
+import 'package:control_de_ansiedad/screens/loading_screen.dart';
 import 'package:control_de_ansiedad/screens/login_screen.dart';
 import 'package:control_de_ansiedad/screens/register_screen.dart';
 import 'package:control_de_ansiedad/screens/settings_page.dart';
@@ -14,5 +14,5 @@ final Map<String, Widget Function(BuildContext)> routes = {
   'chat': (_) => ChatPage(),
   'usuarios': (_) => UsuariosScreen(),
   'register': (_) => RegisterScreen(),
-  //'loading': (_) => LoadingScreen()
+  'loading': (_) => LoadingScreen()
 };

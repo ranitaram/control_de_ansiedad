@@ -1,3 +1,4 @@
+import 'package:control_de_ansiedad/global/environment.dart';
 import 'package:flutter/material.dart';
 
 import 'package:socket_io_client/socket_io_client.dart' as IO;
@@ -9,18 +10,18 @@ class SocketService with ChangeNotifier {
   ServerStatus _serverStatus = ServerStatus.Connecting;
   late IO.Socket _socket;
 
-  ServerStatus get serverStatus => this._serverStatus;
+  ServerStatus get serverStatus => _serverStatus;
   IO.Socket get socket => _socket;
 
   Function get emit => _socket.emit;
 
-  SocketService() {
-    _initCongfig();
-  }
+  // SocketService() {
+  //   _initCongfig();
+  // }
 
-  void _initCongfig() {
+  void connect() {
     _socket = IO.io(
-        'http://localhost:8080/',
+        Environment.socketUrl,
         OptionBuilder()
             .setTransports(['websocket'])
             .enableAutoConnect() // for Flutter or Dart VM
@@ -35,5 +36,10 @@ class SocketService with ChangeNotifier {
       _serverStatus = ServerStatus.Offline;
       notifyListeners();
     });
+  }
+
+//metodo para desconectarnos del servidor
+  void disconnect() {
+    _socket.disconnect();
   }
 }
