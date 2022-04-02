@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../models/usuario.dart';
+import '../services/socket_service.dart';
 
 class UsuariosScreen extends StatefulWidget {
   @override
@@ -27,6 +28,7 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
+    final socketService = Provider.of<SocketService>(context);
     final usuario = authService.usuario;
 
     return Scaffold(
@@ -48,12 +50,16 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
               )),
           actions: [
             Container(
-              margin: EdgeInsets.only(right: 10),
-              child: const Icon(
-                Icons.check_circle,
-                color: Colors.green,
-              ),
-              //child: Icon(Icons.offline_bolt, color: Colors.red,),
+              margin: const EdgeInsets.only(right: 10),
+              child: (socketService.serverStatus == ServerStatus.Online)
+                  ? const Icon(
+                      Icons.check_circle,
+                      color: Colors.green,
+                    )
+                  : const Icon(
+                      Icons.offline_bolt,
+                      color: Colors.red,
+                    ),
             )
           ],
         ),
