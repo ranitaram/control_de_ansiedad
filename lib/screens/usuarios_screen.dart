@@ -1,4 +1,5 @@
 import 'package:control_de_ansiedad/services/auth_services.dart';
+import 'package:control_de_ansiedad/services/usuarios_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -12,18 +13,26 @@ class UsuariosScreen extends StatefulWidget {
 }
 
 class _UsuariosScreenState extends State<UsuariosScreen> {
+  final usuarioService = new UsuarioService();
   RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
-  final usuarios = [
-    Usuario(
-        estado: true, correo: 'test1@test.com', nombre: 'Natalia', uid: '1'),
-    Usuario(estado: true, correo: 'test1@test.com', nombre: 'Ram', uid: '2'),
-    Usuario(estado: true, correo: 'test1@test.com', nombre: 'Anahi', uid: '3'),
-    Usuario(
-        estado: true, correo: 'test1@test.com', nombre: 'Nunutzi', uid: '4'),
-    Usuario(estado: false, correo: 'test1@test.com', nombre: 'Alex', uid: '5'),
-  ];
+  List<Usuario> usuariosDB = [];
+
+  // final usuarios = [
+  //   Usuario(
+  //       estado: true, correo: 'test1@test.com', nombre: 'Natalia', uid: '1'),
+  //   Usuario(estado: true, correo: 'test1@test.com', nombre: 'Ram', uid: '2'),
+  //   Usuario(estado: true, correo: 'test1@test.com', nombre: 'Anahi', uid: '3'),
+  //   Usuario(
+  //       estado: true, correo: 'test1@test.com', nombre: 'Nunutzi', uid: '4'),
+  //   Usuario(estado: false, correo: 'test1@test.com', nombre: 'Alex', uid: '5'),
+  // ];
+  @override
+  void initState() {
+    _cargarUsuarios();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,9 +90,9 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
   ListView _listViewUsuarios() {
     return ListView.separated(
         physics: BouncingScrollPhysics(),
-        itemBuilder: (_, i) => _usuarioListTile(usuarios[i]),
+        itemBuilder: (_, i) => _usuarioListTile(usuariosDB[i]),
         separatorBuilder: (_, i) => Divider(),
-        itemCount: usuarios.length);
+        itemCount: usuariosDB.length);
   }
 
   ListTile _usuarioListTile(Usuario usuario) {
@@ -104,7 +113,11 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
   }
 
   _cargarUsuarios() async {
-    await Future.delayed(Duration(milliseconds: 1000));
+    //crear una nueva instancia
+    usuariosDB = await usuarioService.getUsuario();
+    setState(() {});
+
+    //await Future.delayed(Duration(milliseconds: 1000));
     // if failed,use refreshFailed()
     _refreshController.refreshCompleted();
   }

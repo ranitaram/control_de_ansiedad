@@ -1,4 +1,5 @@
 import 'package:control_de_ansiedad/global/environment.dart';
+import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:flutter/material.dart';
 
 import 'package:socket_io_client/socket_io_client.dart' as IO;
@@ -19,13 +20,14 @@ class SocketService with ChangeNotifier {
   //   _initCongfig();
   // }
 
-  void connect() {
-    _socket = IO.io(
-        Environment.socketUrl,
-        OptionBuilder()
-            .setTransports(['websocket'])
-            .enableAutoConnect() // for Flutter or Dart VM
-            .build());
+  void connect() async {
+    final token = await AuthService.getToken();
+    _socket = IO.io(Environment.socketUrl, {
+      'transports': ['websocket'],
+      'autoConnect': true,
+      'forceNew': true,
+      'extraHeaders': {'x-token': token}
+    });
 
     _socket.onConnect((_) {
       _serverStatus = ServerStatus.Online;
