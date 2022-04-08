@@ -1,4 +1,5 @@
 import 'package:control_de_ansiedad/services/auth_services.dart';
+import 'package:control_de_ansiedad/services/chat_service.dart';
 import 'package:control_de_ansiedad/services/usuarios_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -109,6 +110,11 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
           decoration: BoxDecoration(
               color: usuario.estado ? Colors.green : Colors.red,
               borderRadius: BorderRadius.circular(100))),
+      onTap: () {
+        final chatService = Provider.of<ChatService>(context, listen: false);
+        chatService.usuarioPara = usuario;
+        Navigator.pushNamed(context, 'chat');
+      },
     );
   }
 

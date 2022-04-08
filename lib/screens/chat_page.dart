@@ -1,8 +1,10 @@
 import 'dart:io';
 
+import 'package:control_de_ansiedad/services/chat_service.dart';
 import 'package:control_de_ansiedad/widgets/chat_message.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ChatPage extends StatefulWidget {
   @override
@@ -19,19 +21,23 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final chatService = Provider.of<ChatService>(context);
+    final usuarioPara = chatService.usuarioPara;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Column(
           children: [
             CircleAvatar(
-              child: Text('Ch', style: TextStyle(fontSize: 12)),
+              child: Text(usuarioPara.nombre.substring(0, 2),
+                  style: TextStyle(fontSize: 12)),
               backgroundColor: Colors.blue[200],
               maxRadius: 14,
             ),
             SizedBox(height: 3),
             Text(
-              'Chat ',
+              usuarioPara.nombre,
               style: TextStyle(color: Colors.black87, fontSize: 15),
             )
           ],
@@ -55,7 +61,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
             ),
             //caja de texto
             Container(
-              color: Colors.black,
+              color: Color.fromARGB(255, 79, 0, 148),
               child: _inputChat(),
             )
           ],
