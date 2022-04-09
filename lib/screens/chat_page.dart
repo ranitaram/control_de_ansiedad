@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/services/chat_service.dart';
+import 'package:control_de_ansiedad/services/socket_service.dart';
 import 'package:control_de_ansiedad/widgets/chat_message.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,13 +17,44 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   final _textController = TextEditingController();
   final _focusNode = FocusNode();
 
+  late ChatService chatService;
+  late SocketService socketService;
+  late AuthService authService;
+
   List<ChatMessage> _messages = [];
 
   bool _estaEscribiendo = false;
 
   @override
+  void initState() {
+    chatService = Provider.of<ChatService>(context, listen: false);
+    socketService = Provider.of<SocketService>(context, listen: false);
+    authService = Provider.of<AuthService>(context, listen: false);
+
+    socketService.socket.on('mensaje-privado', _escucharMensaje);
+    super.initState();
+  }
+
+  void _escucharMensaje(dynamic payload) {
+    print(payload['mensaje']);
+
+    ChatMessage message = new ChatMessage(
+        texto: payload['mensaje'],
+        uid: payload['de'],
+        animationController: AnimationController(
+            vsync: this, duration: Duration(milliseconds: 300)));
+
+    setState(() {
+      _messages.insert(0, message);
+    });
+
+    //hechar a andar la animacion
+    message.animationController.forward();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final chatService = Provider.of<ChatService>(context);
+    // final chatService = Provider.of<ChatService>(context);
     final usuarioPara = chatService.usuarioPara;
 
     return Scaffold(
@@ -142,15 +175,20 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
     setState(() {
       _estaEscribiendo = false;
     });
+    socketService.emit('mensaje-privado', {
+      'de': authService.usuario.uid,
+      'para': chatService.usuarioPara.uid,
+      'mensaje': texto
+    });
   }
 
   @override
   void dispose() {
-    // TODO: off del socket
     for (ChatMessage message in _messages) {
       message.animationController.dispose();
       //para limpiar la pantalla del chat
     }
+    socketService.socket.off('mensaje-privado');
     super.dispose();
   }
 }
