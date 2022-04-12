@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Control de ansiedad',
-        initialRoute: 'login',
+        initialRoute: 'loginnuevo',
         routes: routes,
         theme: currentTheme,
         // theme: ThemeData.light().copyWith(

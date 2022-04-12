@@ -7,15 +7,17 @@ class InputDecorations {
       IconData? prefixIcon}) {
     return InputDecoration(
         enabledBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.deepOrangeAccent)),
+            borderSide: BorderSide(color: Colors.deepPurple)),
         focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.greenAccent, width: 2)),
+            borderSide: BorderSide(color: Colors.deepPurple, width: 2)),
         hintText: hinText,
-        hintStyle: TextStyle(color: Colors.grey),
         labelText: labelText,
-        labelStyle: const TextStyle(color: Colors.blueGrey),
+        labelStyle: const TextStyle(color: Colors.grey),
         prefixIcon: prefixIcon != null
-            ? Icon(prefixIcon, color: Colors.lightBlue)
+            ? Icon(
+                prefixIcon,
+                color: Color.fromARGB(255, 222, 61, 61),
+              )
             : null);
   }
 }
