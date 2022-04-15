@@ -120,7 +120,8 @@ class _LoginForm extends StatelessWidget {
                             if (loginOk) {
                               socketService.connect();
 
-                              Navigator.pushReplacementNamed(context, 'home');
+                              Navigator.pushReplacementNamed(
+                                  context, 'niveldeansiedad');
                             } else {
                               //mostrar alerta
                               mostrarAlerta(context, 'Login incorrecto',

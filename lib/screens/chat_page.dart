@@ -98,7 +98,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
         elevation: 1,
       ),
       body: Container(
-        color: Colors.black87,
+        color: Color.fromARGB(255, 226, 218, 218),
         child: Column(
           children: [
             Flexible(

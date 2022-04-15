@@ -143,7 +143,8 @@ class _LoginForm extends StatelessWidget {
                             if (registerOk) {
                               socketService.connect();
 
-                              Navigator.pushReplacementNamed(context, 'home');
+                              Navigator.pushReplacementNamed(
+                                  context, 'niveldeansiedad');
                             } else {
                               //mostrar alerta
                               mostrarAlerta(context, 'Registro incorrecto',
