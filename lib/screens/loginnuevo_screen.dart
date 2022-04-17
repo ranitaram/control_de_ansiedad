@@ -4,6 +4,7 @@ import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/services/socket_service.dart';
 import 'package:control_de_ansiedad/widgets/boton_azul.dart';
 import 'package:control_de_ansiedad/widgets/custom_labels.dart';
+import 'package:control_de_ansiedad/widgets/custom_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +24,7 @@ class LoginNuevoScreen extends StatelessWidget {
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Logo(),
+              const CustomLogo(titulo: 'Login'),
               const SizedBox(height: 20),
               ChangeNotifierProvider(
                 create: (_) => LoginFormProvider(),

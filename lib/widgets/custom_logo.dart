@@ -17,7 +17,7 @@ class CustomLogo extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               titulo,
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(color: Colors.white, fontSize: 30),
             )
           ],
         ),

@@ -1,3 +1,6 @@
+import 'package:control_de_ansiedad/screens/noticias_page.dart';
+import 'package:control_de_ansiedad/screens/usuarios_screen.dart';
+import 'package:control_de_ansiedad/services/menu_navegacion_services.dart';
 import 'package:control_de_ansiedad/theme/theme.dart';
 import 'package:control_de_ansiedad/widgets/menu_widget.dart';
 import 'package:control_de_ansiedad/widgets/widgets.dart';
@@ -8,41 +11,55 @@ import 'package:provider/provider.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final menuNavegacionServices = Provider.of<MenuNavegacionServices>(context);
     final appTheme = Provider.of<ThemeChanger>(context);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue,
         title: const Text('Control de ansiedad '),
       ),
       drawer: const MenuWidget(),
-      body: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (BuildContext context, int index) => EstadoCard()),
-      floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          backgroundColor: (appTheme.darkTheme) ? Colors.blue : Colors.pink,
-          onPressed: () {}),
+      body: _Paginas(),
+      //  ListView.builder(
+      //     itemCount: 10,
+      //     itemBuilder: (BuildContext context, int index) => EstadoCard()),
+      // floatingActionButton: FloatingActionButton(
+      //     child: const Icon(Icons.add),
+      //     backgroundColor: (appTheme.darkTheme) ? Colors.blue : Colors.pink,
+      //     onPressed: () {}),
       bottomNavigationBar: ConvexAppBar(
-          backgroundColor:
-              (appTheme.darkTheme) ? Colors.black : Colors.lightBlue[300],
+          backgroundColor: (appTheme.darkTheme) ? Colors.black : Colors.blue,
           color: (appTheme.darkTheme) ? Colors.white : Colors.black,
           items: const [
-            TabItem(
-                icon: Icons.sentiment_satisfied_alt_outlined, title: 'Animo'),
+            TabItem(icon: Icons.newspaper, title: 'Noticias'),
             TabItem(icon: Icons.bar_chart_sharp, title: 'Grafica'),
             TabItem(icon: Icons.checklist_sharp, title: 'Desafios'),
-            TabItem(icon: Icons.rate_review_rounded, title: 'Test'),
+            TabItem(icon: Icons.rate_review_rounded, title: 'Lecciones'),
             TabItem(icon: Icons.chat_rounded, title: 'Chat'),
           ],
+          initialActiveIndex: menuNavegacionServices.paginaActual,
           onTap: (int i) {
-            if (i == 4) {
-              Navigator.pushReplacementNamed(context, 'usuarios');
-            } else {}
-          }
+            menuNavegacionServices.paginaActual = i;
+            print('click index = $i');
+          }),
+    );
+  }
+}
 
-          // if (i == 4) {
-          //   Navigator.pushReplacementNamed(context, 'usuarios');
-          // }
-          ),
+class _Paginas extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final menuNavegacionServices = Provider.of<MenuNavegacionServices>(context);
+    return PageView(
+      controller: menuNavegacionServices.pageController,
+      physics: NeverScrollableScrollPhysics(),
+      children: [
+        const NoticiasPage(),
+        Container(color: Colors.blue),
+        Container(color: Colors.green),
+        Container(color: Colors.yellow),
+        UsuariosScreen()
+      ],
     );
   }
 }

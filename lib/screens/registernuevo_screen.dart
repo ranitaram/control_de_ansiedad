@@ -24,7 +24,7 @@ class RegisternuevoScreen extends StatelessWidget {
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Logo(),
+              const CustomLogo(titulo: 'Registro'),
               const SizedBox(height: 20),
               ChangeNotifierProvider(
                 create: (_) => LoginFormProvider(),
@@ -140,7 +140,7 @@ class _LoginForm extends StatelessWidget {
                                 nameCtrl.text.trim(),
                                 emailCtrl.text.trim(),
                                 passCtrl.text.trim());
-                            if (registerOk) {
+                            if (registerOk == true) {
                               socketService.connect();
 
                               Navigator.pushReplacementNamed(
@@ -148,7 +148,7 @@ class _LoginForm extends StatelessWidget {
                             } else {
                               //mostrar alerta
                               mostrarAlerta(context, 'Registro incorrecto',
-                                  'Intente nuevamente');
+                                  'Los datos ya han  sido registrados anteriormente');
                             }
                           },
                   )

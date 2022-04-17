@@ -4,6 +4,7 @@ import 'package:control_de_ansiedad/screens/loading_screen.dart';
 import 'package:control_de_ansiedad/screens/login_screen.dart';
 import 'package:control_de_ansiedad/screens/loginnuevo_screen.dart';
 import 'package:control_de_ansiedad/screens/nivel_de_ansiedad.dart';
+import 'package:control_de_ansiedad/screens/noticias_page.dart';
 import 'package:control_de_ansiedad/screens/register_screen.dart';
 import 'package:control_de_ansiedad/screens/registernuevo_screen.dart';
 import 'package:control_de_ansiedad/screens/settings_page.dart';
@@ -20,5 +21,6 @@ final Map<String, Widget Function(BuildContext)> routes = {
   'loading': (_) => LoadingScreen(),
   'loginnuevo': (_) => LoginNuevoScreen(),
   'registernuevo': (_) => RegisternuevoScreen(),
-  'niveldeansiedad': (_) => NivelDeAnsiedadPage()
+  'niveldeansiedad': (_) => NivelDeAnsiedadPage(),
+  'noticias': (_) => NoticiasPage()
 };

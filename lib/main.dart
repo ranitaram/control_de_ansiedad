@@ -1,6 +1,9 @@
 import 'package:control_de_ansiedad/routes/routes.dart';
 import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/services/chat_service.dart';
+import 'package:control_de_ansiedad/services/menu_navegacion_services.dart';
+import 'package:control_de_ansiedad/services/news_api_service.dart';
+import 'package:control_de_ansiedad/services/noticias_services.dart';
 import 'package:control_de_ansiedad/services/socket_service.dart';
 //import 'package:control_de_ansiedad/screens/screens.dart';
 import 'package:control_de_ansiedad/share_prefs/preferencias_usuario.dart';
@@ -18,7 +21,7 @@ void main() async {
   await prefs.initPrefs();
 
   runApp(ChangeNotifierProvider(
-      create: (_) => ThemeChanger(2),
+      create: (_) => ThemeChanger(1),
       // create: (_) => ThemeChanger(2),
       child: MyApp()));
 }
@@ -33,7 +36,10 @@ class MyApp extends StatelessWidget {
         //crear una instancia global del AuthService
         ChangeNotifierProvider(create: (_) => AuthService()),
         ChangeNotifierProvider(create: (_) => SocketService()),
-        ChangeNotifierProvider(create: (_) => ChatService())
+        ChangeNotifierProvider(create: (_) => ChatService()),
+        ChangeNotifierProvider(create: (_) => NavegacionNoticasServices()),
+        ChangeNotifierProvider(create: (_) => MenuNavegacionServices()),
+        ChangeNotifierProvider(create: (_) => NewsApiService()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

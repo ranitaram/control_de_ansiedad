@@ -113,7 +113,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
             ),
             //caja de texto
             Container(
-              color: Color.fromARGB(255, 79, 0, 148),
+              color: Color.fromARGB(255, 255, 255, 255),
               child: _inputChat(),
             )
           ],
