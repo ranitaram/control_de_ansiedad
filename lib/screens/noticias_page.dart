@@ -1,9 +1,7 @@
 //import 'package:control_de_ansiedad/services/news_api_service.dart';
 import 'package:control_de_ansiedad/services/news_api_service.dart';
-import 'package:control_de_ansiedad/services/noticias_services.dart';
 import 'package:control_de_ansiedad/widgets/lista_noticias.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class NoticiasPage extends StatefulWidget {

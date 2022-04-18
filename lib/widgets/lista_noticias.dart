@@ -1,4 +1,5 @@
 import 'package:control_de_ansiedad/models/news_model.dart';
+import 'package:control_de_ansiedad/screens/contenido_articulo.dart';
 import 'package:control_de_ansiedad/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -37,7 +38,7 @@ class _Noticia extends StatelessWidget {
         TarjetaTitulo(noticia),
         TarjetaImagen(noticia),
         TarjetaBody(noticia),
-        TarjetaBoton(),
+        TarjetaBoton(noticia),
         // TarjetaContenido(noticia),
         const SizedBox(height: 10),
         const Divider(),
@@ -47,11 +48,16 @@ class _Noticia extends StatelessWidget {
 }
 
 class TarjetaBoton extends StatelessWidget {
+  final Article noticia;
+
+  const TarjetaBoton(this.noticia);
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
-        print('Ir a la noticia');
+        print('IR AL CONTENIDO');
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ContenidoPage(noticia)));
       },
       child: Container(
         child: ClipRRect(
