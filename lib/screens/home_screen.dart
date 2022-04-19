@@ -1,3 +1,4 @@
+import 'package:control_de_ansiedad/screens/desafios.dart';
 import 'package:control_de_ansiedad/screens/noticias_page.dart';
 import 'package:control_de_ansiedad/screens/usuarios_screen.dart';
 import 'package:control_de_ansiedad/services/menu_navegacion_services.dart';
@@ -32,8 +33,8 @@ class HomeScreen extends StatelessWidget {
           color: (appTheme.darkTheme) ? Colors.white : Colors.black,
           items: const [
             TabItem(icon: Icons.newspaper, title: 'Noticias'),
-            TabItem(icon: Icons.bar_chart_sharp, title: 'Grafica'),
-            TabItem(icon: Icons.checklist_sharp, title: 'Desafios'),
+            TabItem(icon: Icons.person_pin, title: 'Perfil'),
+            TabItem(icon: Icons.checklist_sharp, title: 'Desafíos'),
             TabItem(icon: Icons.rate_review_rounded, title: 'Lecciones'),
             TabItem(icon: Icons.chat_rounded, title: 'Chat'),
           ],
@@ -56,7 +57,7 @@ class _Paginas extends StatelessWidget {
       children: [
         const NoticiasPage(),
         Container(color: Colors.blue),
-        Container(color: Colors.green),
+        DesafiosPage(),
         Container(color: Colors.yellow),
         UsuariosScreen()
       ],

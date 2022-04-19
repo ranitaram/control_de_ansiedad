@@ -28,7 +28,27 @@ class ContenidoPage extends StatelessWidget {
             SizedBox(height: 10),
             TarjetaTitulo(noticia),
             TarjetaImagen(noticia),
+            TarjetaContenido(noticia)
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class TarjetaContenido extends StatelessWidget {
+  final Article noticia;
+
+  const TarjetaContenido(this.noticia);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Text(
+        noticia.content ?? '',
+        style: const TextStyle(
+          fontSize: 15,
         ),
       ),
     );

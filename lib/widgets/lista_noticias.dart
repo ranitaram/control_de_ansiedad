@@ -34,6 +34,7 @@ class _Noticia extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 15),
         TarjetaTopBar(noticia, index),
         TarjetaTitulo(noticia),
         TarjetaImagen(noticia),
@@ -179,9 +180,9 @@ class TarjetaImagen extends StatelessWidget {
                       //   style: TextStyle(fontSize: 25, color: Colors.red),
                       // );
                     },
-                    placeholder: AssetImage('assets/loading-1.gif'),
+                    placeholder: const AssetImage('assets/loading-1.gif'),
                     image: NetworkImage('${noticia.urlToImage}'))
-                : Image(image: AssetImage('assets/no-image.png'))),
+                : const Image(image: AssetImage('assets/no-image.png'))),
       ),
     );
   }
