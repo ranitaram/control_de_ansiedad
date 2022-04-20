@@ -1,3 +1,4 @@
+import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -75,6 +76,8 @@ class DesafiosPage extends StatelessWidget {
                 texto: 'Desafío 1: Usa tu mano no dominante',
                 onpress: () {
                   print('USA TU MANO DOMINANTE ');
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Desafio1Page()));
                 },
                 color1: Colors.red,
                 color2: Colors.blue,
@@ -139,22 +142,3 @@ class TituloDesafios extends StatelessWidget {
     );
   }
 }
-
-// Scaffold(
-//       body: Container(
-//         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-//         child: Column(
-//           children: [
-//             TituloDesafios(),
-//             SizedBox(height: 10),
-//             Container(
-//               child: const Center(
-//                 child: Text(
-//                     'Te recomendamos hacer un desafio por semana ó hasta que se convierta en un hábito, una vez que forme parte de tu vida puedes agregar otro desafio'),
-//               ),
-//             ),
-            
-//           ],
-//         ),
-//       ),
-//     );

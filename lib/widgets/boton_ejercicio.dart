@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class BotonGordo extends StatelessWidget {
+class BotonEjercicio extends StatelessWidget {
   final IconData icon;
   final String texto;
   final Color color1;
   final Color color2;
   final Function() onpress;
 
-  BotonGordo(
+  BotonEjercicio(
       {required this.icon, //= FontAwesomeIcons.ambulance,
       required this.texto,
       required this.color1, // = Colors.white,
@@ -21,13 +22,13 @@ class BotonGordo extends StatelessWidget {
       onTap: this.onpress,
       child: Stack(
         children: [
-          _BotonGordoBackground(icon, color1, color2),
+          _BotonejericioBackground(icon, color1, color2),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 140,
-                width: 40,
+                height: 600,
+                width: 30,
               ),
               FaIcon(
                 this.icon,
@@ -39,17 +40,20 @@ class BotonGordo extends StatelessWidget {
               ),
               Expanded(
                 child: Text(this.texto,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    )),
+                    style:
+                        GoogleFonts.spaceMono(fontSize: 18, color: Colors.black)
+                    // const TextStyle(
+                    //   color: Colors.black,
+                    //   fontSize: 18,
+                    // )
+                    ),
               ),
               const FaIcon(
                 FontAwesomeIcons.chevronRight,
-                color: Colors.white,
+                color: Colors.transparent,
               ),
               const SizedBox(
-                width: 40,
+                width: 30,
               )
             ],
           )
@@ -59,12 +63,12 @@ class BotonGordo extends StatelessWidget {
   }
 }
 
-class _BotonGordoBackground extends StatelessWidget {
+class _BotonejericioBackground extends StatelessWidget {
   final IconData icon;
   final Color color1;
   final Color color2;
 
-  const _BotonGordoBackground(this.icon, this.color1, this.color2);
+  const _BotonejericioBackground(this.icon, this.color1, this.color2);
 
   @override
   Widget build(BuildContext context) {
@@ -74,19 +78,19 @@ class _BotonGordoBackground extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-                right: -20,
-                top: -20,
+                right: 40,
+                top: 100,
                 child: FaIcon(
                   icon,
-                  size: 150,
-                  color: Colors.white.withOpacity(0.2),
+                  size: 300,
+                  color: Colors.white.withOpacity(0.1),
                 ))
           ],
         ),
       ),
       width: double.infinity,
-      height: 100,
-      margin: EdgeInsets.all(20),
+      height: double.infinity,
+      margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
