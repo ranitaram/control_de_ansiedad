@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BotonGordo extends StatelessWidget {
   final IconData icon;
@@ -39,10 +40,13 @@ class BotonGordo extends StatelessWidget {
               ),
               Expanded(
                 child: Text(this.texto,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    )),
+                    style:
+                        GoogleFonts.spaceMono(fontSize: 18, color: Colors.white)
+                    // const TextStyle(
+                    //   color: Colors.white,
+                    //   fontSize: 18,
+                    // )
+                    ),
               ),
               const FaIcon(
                 FontAwesomeIcons.chevronRight,

@@ -4,7 +4,6 @@ import 'package:control_de_ansiedad/screens/usuarios_screen.dart';
 import 'package:control_de_ansiedad/services/menu_navegacion_services.dart';
 import 'package:control_de_ansiedad/theme/theme.dart';
 import 'package:control_de_ansiedad/widgets/menu_widget.dart';
-import 'package:control_de_ansiedad/widgets/widgets.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,13 +20,6 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: const MenuWidget(),
       body: _Paginas(),
-      //  ListView.builder(
-      //     itemCount: 10,
-      //     itemBuilder: (BuildContext context, int index) => EstadoCard()),
-      // floatingActionButton: FloatingActionButton(
-      //     child: const Icon(Icons.add),
-      //     backgroundColor: (appTheme.darkTheme) ? Colors.blue : Colors.pink,
-      //     onPressed: () {}),
       bottomNavigationBar: ConvexAppBar(
           backgroundColor: (appTheme.darkTheme) ? Colors.black : Colors.blue,
           color: (appTheme.darkTheme) ? Colors.white : Colors.black,
@@ -35,7 +27,7 @@ class HomeScreen extends StatelessWidget {
             TabItem(icon: Icons.newspaper, title: 'Noticias'),
             TabItem(icon: Icons.person_pin, title: 'Perfil'),
             TabItem(icon: Icons.checklist_sharp, title: 'Desafíos'),
-            TabItem(icon: Icons.rate_review_rounded, title: 'Lecciones'),
+            TabItem(icon: Icons.rate_review_rounded, title: 'Consejos'),
             TabItem(icon: Icons.chat_rounded, title: 'Chat'),
           ],
           initialActiveIndex: menuNavegacionServices.paginaActual,

@@ -2,6 +2,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ItemBoton {
   final IconData icon;
@@ -57,9 +58,7 @@ class DesafiosPage extends StatelessWidget {
             texto: item.texto,
             color1: item.color1,
             color2: item.color2,
-            onpress: () {
-              print('Hola');
-            }))
+            onpress: () {}))
         .toList();
 
     return Scaffold(
@@ -73,9 +72,9 @@ class DesafiosPage extends StatelessWidget {
               TituloDesafios(), Recomendacion(),
               //  ...itemMap
               BotonGordo(
-                texto: 'Desafío 1: Usa tu mano no dominante',
+                texto: 'Desafío 1: Usa tu mano menos capaz',
                 onpress: () {
-                  print('USA TU MANO DOMINANTE ');
+                  print('USA TU MANO NO DOMINANTE ');
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Desafio1Page()));
                 },
@@ -85,7 +84,7 @@ class DesafiosPage extends StatelessWidget {
               ),
               BotonGordo(
                   icon: FontAwesomeIcons.ghost,
-                  texto: 'Desafío 2: No dejes rastro',
+                  texto: 'Desafío 2: Cómo un fantasma',
                   color1: Colors.green,
                   color2: Colors.purple,
                   onpress: () {
@@ -93,7 +92,7 @@ class DesafiosPage extends StatelessWidget {
                   }),
               BotonGordo(
                   icon: FontAwesomeIcons.headSideCoughSlash,
-                  texto: 'Desafío 3: Muletillas',
+                  texto: 'Desafío 3: Bordón',
                   color1: Colors.amber,
                   color2: Colors.brown,
                   onpress: () {
@@ -118,7 +117,9 @@ class Recomendacion extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Text(
         'Te recomendamos hacer un desafío por semana ó hasta que se convierta en un hábito, una vez que forme parte de tu vida puedes agregar otro desafío',
-        style: TextStyle(fontSize: 20),
+        style: GoogleFonts.spaceMono(
+          fontSize: 18,
+        ),
       ),
     );
   }
@@ -134,7 +135,7 @@ class TituloDesafios extends StatelessWidget {
     return Container(
       child: const Center(
         child: Text(
-          'Desafios mindfulnnes',
+          'Desafíos mindfulnnes',
           style: TextStyle(
               fontSize: 25, fontWeight: FontWeight.bold, color: Colors.cyan),
         ),

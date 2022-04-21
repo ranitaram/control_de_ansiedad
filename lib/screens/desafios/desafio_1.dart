@@ -10,7 +10,7 @@ class Desafio1Page extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-            title: Text('Usa tu mano no dominante'),
+            title: const Text('Usa tu mano no dominante'),
             backgroundColor: Color.fromARGB(255, 11, 114, 99)),
         body: Stack(
           children: [
@@ -21,7 +21,7 @@ class Desafio1Page extends StatelessWidget {
                   BotonEjercicio(
                       icon: FontAwesomeIcons.angellist,
                       texto:
-                          'Usa tu mano no dominante para algunas tareas comunes de todos los días. Estas podrían incluir cepillarte los dientes, peinarte o comer con la mano no dominante al menos parte de cada comida. Si estás preparado para un gran desafío, trata de usar la mano no dominante cuando escribes o cuando comes.',
+                          'Usa tu mano menos capaz para algunas tareas comunes de todos los días. Estas podrían ser cepillarte los dientes, peinarte o comer con la mano no dominante. Si estás preparado para un gran desafío, trata de usar la mano no dominante cuando escribes.',
                       color1: Colors.red,
                       color2: Colors.blue,
                       onpress: () {})
@@ -31,12 +31,19 @@ class Desafio1Page extends StatelessWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: Color.fromARGB(255, 11, 114, 99),
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => Acuerdate1Page()));
           },
-          icon: FaIcon(Icons.chevron_right),
-          label: Text('Siguiente'),
+          icon: const FaIcon(
+            Icons.chevron_right,
+            color: Colors.white,
+          ),
+          label: const Text(
+            'Siguiente',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ),
     );

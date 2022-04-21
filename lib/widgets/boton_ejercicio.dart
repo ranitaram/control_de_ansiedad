@@ -89,7 +89,7 @@ class _BotonejericioBackground extends StatelessWidget {
         ),
       ),
       width: double.infinity,
-      height: double.infinity,
+      height: 500,
       margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
           boxShadow: [
