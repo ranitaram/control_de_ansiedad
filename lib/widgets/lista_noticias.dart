@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 class ListaNoticias extends StatelessWidget {
   final List<Article> noticias;
 
-  const ListaNoticias(this.noticias);
+  ListaNoticias(this.noticias);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,6 @@ class TarjetaBoton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print('IR AL CONTENIDO');
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ContenidoPage(noticia)));
       },
@@ -111,7 +110,7 @@ class TarjetaBoton extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                   color: Colors.black.withOpacity(0.4),
-                  offset: Offset(4, 6),
+                  offset: const Offset(4, 6),
                   blurRadius: 10),
             ],
             borderRadius: BorderRadius.circular(50),
@@ -121,19 +120,6 @@ class TarjetaBoton extends StatelessWidget {
     );
   }
 }
-
-// class TarjetaContenido extends StatelessWidget {
-//   final Article noticia;
-
-//   const TarjetaContenido(this.noticia);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Text((noticia.content ?? '')),
-//     );
-//   }
-// }
 
 class TarjetaBody extends StatelessWidget {
   final Article noticia;
@@ -198,7 +184,7 @@ class TarjetaTitulo extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: Text(
         noticia.title,
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
     );
   }
@@ -212,8 +198,8 @@ class TarjetaTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      margin: EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       child: Row(
         children: [
           Text(

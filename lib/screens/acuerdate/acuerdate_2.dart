@@ -1,9 +1,9 @@
-import 'package:control_de_ansiedad/screens/descubrimientos/que_aprendimos1.dart';
+import 'package:control_de_ansiedad/screens/descubrimientos/que_aprendimos2.dart';
 import 'package:control_de_ansiedad/widgets/boton_ejercicio.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Acuerdate1Page extends StatelessWidget {
+class Acuerdate2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final appTheme = Provider.of<ThemeChanger>(context);
@@ -11,7 +11,7 @@ class Acuerdate1Page extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
             title: const Text('Para que te acuerdes'),
-            backgroundColor: Color.fromARGB(255, 106, 4, 179)),
+            backgroundColor: const Color.fromARGB(255, 106, 4, 179)),
         body: Stack(
           children: [
             Container(
@@ -21,17 +21,17 @@ class Acuerdate1Page extends StatelessWidget {
                 //scrollDirection: Axis.vertical,
                 children: [
                   BotonEjercicio(
-                      icon: FontAwesomeIcons.angellist,
+                      icon: FontAwesomeIcons.ghost,
                       texto:
-                          'Ponte una cinta adhesiva en la mano dominante y cuando la veas, cambia de mano, ó ponla en todos aquellos objetos que agarras con tu mano derecha, como el ratón de la computadora, tu cepillo de dientes, etc.',
-                      color1: Colors.red,
-                      color2: Colors.blue,
+                          'Puedes poner pequeñas imágenes de fantasmas en el área que seleccionaste para el desafío o colocarlas en los objetos que más utilices para así recordar como las debes de dejar nuevamente y limpiarlas si las has ensuciado.',
+                      color1: Colors.green,
+                      color2: Colors.purple,
                       onpress: () {}),
                 ],
               ),
             ),
             Positioned(
-              bottom: 80,
+              bottom: 70,
               left: 70,
               child: Container(
                 width: 250,
@@ -50,7 +50,7 @@ class Acuerdate1Page extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 40,
+              bottom: 30,
               left: 120,
               child: GestureDetector(
                 onTap: () {
@@ -74,14 +74,14 @@ class Acuerdate1Page extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 40,
+              bottom: 30,
               right: 120,
               child: GestureDetector(
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => QueAprendimos1Page()));
+                          builder: (context) => QueAprendimos2Page()));
                 },
                 child: Container(
                   width: 50,

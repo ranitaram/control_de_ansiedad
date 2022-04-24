@@ -1,5 +1,6 @@
 import 'package:control_de_ansiedad/screens/desafios.dart';
 import 'package:control_de_ansiedad/screens/noticias_page.dart';
+import 'package:control_de_ansiedad/screens/perfil_page.dart';
 import 'package:control_de_ansiedad/screens/usuarios_screen.dart';
 import 'package:control_de_ansiedad/services/menu_navegacion_services.dart';
 import 'package:control_de_ansiedad/theme/theme.dart';
@@ -48,7 +49,7 @@ class _Paginas extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       children: [
         const NoticiasPage(),
-        Container(color: Colors.blue),
+        PerfilPage(),
         DesafiosPage(),
         Container(color: Colors.yellow),
         UsuariosScreen()

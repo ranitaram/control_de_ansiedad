@@ -2,6 +2,7 @@ import 'package:control_de_ansiedad/helpers/status_bar.dart';
 import 'package:control_de_ansiedad/widgets/boton_image_nivel.dart';
 import 'package:control_de_ansiedad/widgets/boton_niveldeansieda.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NivelDeAnsiedadPage extends StatelessWidget {
   @override
@@ -24,12 +25,14 @@ class NivelDeAnsiedadPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                   color: Colors.transparent,
                 ),
-                child: const Text(
+                child: Text(
                   '¿Cómo te sientes en este momento?',
-                  style: TextStyle(
-                      color: Colors.amber,
-                      fontSize: 22,
-                      decoration: TextDecoration.none),
+                  style: GoogleFonts.spaceMono(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.amber,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
               Container(

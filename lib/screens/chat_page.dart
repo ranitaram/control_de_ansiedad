@@ -78,6 +78,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
 
     return Scaffold(
       appBar: AppBar(
+        // leading: I,
         backgroundColor: Colors.white,
         title: Column(
           children: [

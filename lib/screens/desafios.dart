@@ -1,4 +1,5 @@
 import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -21,46 +22,6 @@ class ItemBoton {
 class DesafiosPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final items = <ItemBoton>[
-      ItemBoton(
-        FontAwesomeIcons.angellist,
-        'Desafío 1: Usa tu mano dominante',
-        Color(0xff6989F5),
-        Color(0xff906EF5),
-      ),
-      ItemBoton(FontAwesomeIcons.ghost, 'Desafío 2: No dejes rastro',
-          Color(0xff66A9F2), Color(0xff536CF6)),
-      ItemBoton(FontAwesomeIcons.theaterMasks, 'Theft / Harrasement',
-          Color(0xffF2D572), Color(0xffE06AA3)),
-      ItemBoton(FontAwesomeIcons.biking, 'Awards', Color(0xff317183),
-          Color(0xff46997D)),
-      ItemBoton(FontAwesomeIcons.carCrash, 'Motor Accident', Color(0xff6989F5),
-          Color(0xff906EF5)),
-      ItemBoton(FontAwesomeIcons.plus, 'Medical Emergency', Color(0xff66A9F2),
-          Color(0xff536CF6)),
-      ItemBoton(FontAwesomeIcons.theaterMasks, 'Theft / Harrasement',
-          Color(0xffF2D572), Color(0xffE06AA3)),
-      ItemBoton(FontAwesomeIcons.biking, 'Awards', Color(0xff317183),
-          Color(0xff46997D)),
-      ItemBoton(FontAwesomeIcons.carCrash, 'Motor Accident', Color(0xff6989F5),
-          Color(0xff906EF5)),
-      ItemBoton(FontAwesomeIcons.plus, 'Medical Emergency', Color(0xff66A9F2),
-          Color(0xff536CF6)),
-      ItemBoton(FontAwesomeIcons.theaterMasks, 'Theft / Harrasement',
-          Color(0xffF2D572), Color(0xffE06AA3)),
-      ItemBoton(FontAwesomeIcons.biking, 'Awards', Color(0xff317183),
-          Color(0xff46997D)),
-    ];
-
-    List<Widget> itemMap = items
-        .map((item) => BotonGordo(
-            icon: item.icon,
-            texto: item.texto,
-            color1: item.color1,
-            color2: item.color2,
-            onpress: () {}))
-        .toList();
-
     return Scaffold(
         body: Stack(
       children: [
@@ -74,7 +35,6 @@ class DesafiosPage extends StatelessWidget {
               BotonGordo(
                 texto: 'Desafío 1: Usa tu mano menos capaz',
                 onpress: () {
-                  print('USA TU MANO NO DOMINANTE ');
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Desafio1Page()));
                 },
@@ -87,7 +47,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 2: Cómo un fantasma',
                   color1: Colors.green,
                   color2: Colors.purple,
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Desafio2Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.headSideCoughSlash,
                   texto: 'Desafío 3: Bordón',
@@ -258,9 +223,141 @@ class DesafiosPage extends StatelessWidget {
                   onpress: () {}),
               BotonGordo(
                   icon: FontAwesomeIcons.java,
-                  texto: 'Desafío 30: Olores',
+                  texto: 'Desafío 31: Olores',
                   color1: Color.fromARGB(255, 237, 71, 5),
                   color2: Color.fromARGB(255, 235, 209, 10),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.theaterMasks,
+                  texto: 'Desafío 32: Esa persona Podría morir',
+                  color1: Color.fromARGB(255, 36, 31, 29),
+                  color2: Color.fromARGB(255, 6, 0, 0),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.cloudSunRain,
+                  texto: 'Desafío 33: Temperatura',
+                  color1: Color.fromARGB(255, 9, 197, 230),
+                  color2: Color.fromARGB(255, 237, 85, 4),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.globeAmericas,
+                  texto: 'Desafío 34: Planeta',
+                  color1: Color.fromARGB(255, 79, 41, 0),
+                  color2: Color.fromARGB(255, 37, 87, 162),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.angry,
+                  texto: 'Desafío 35: Lo qué no te gusta',
+                  color1: Color.fromARGB(255, 255, 44, 7),
+                  color2: Color.fromARGB(255, 225, 169, 203),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.exclamationTriangle,
+                  texto: 'Desafío 36: ¿Ignoras algo?',
+                  color1: Color.fromARGB(255, 255, 176, 7),
+                  color2: Color.fromARGB(255, 189, 36, 2),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.wind,
+                  texto: 'Desafío 37: Viento',
+                  color1: Color.fromARGB(255, 139, 148, 167),
+                  color2: Color.fromARGB(255, 49, 60, 96),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.assistiveListeningSystems,
+                  texto: 'Desafío 38: Escucha',
+                  color1: Color.fromARGB(255, 139, 148, 167),
+                  color2: Color.fromARGB(255, 247, 116, 195),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.userFriends,
+                  texto: 'Desafío 39: Gratitud',
+                  color1: Color.fromARGB(255, 86, 142, 81),
+                  color2: Color.fromARGB(255, 5, 232, 217),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.oldRepublic,
+                  texto: 'Desafío 40: Envejecimiento',
+                  color1: Color.fromARGB(255, 137, 142, 136),
+                  color2: Color.fromARGB(255, 20, 72, 68),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.userClock,
+                  texto: 'Desafío 41: Puntual',
+                  color1: Color.fromARGB(255, 211, 47, 47),
+                  color2: Color.fromARGB(255, 99, 74, 22),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.playstation,
+                  texto: 'Desafío 42: Procrastinación',
+                  color1: Color.fromARGB(255, 5, 106, 230),
+                  color2: Color.fromARGB(255, 118, 175, 210),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.wineGlass,
+                  texto: 'Desafío 43: Sentido del gusto',
+                  color1: Color.fromARGB(255, 146, 230, 10),
+                  color2: Color.fromARGB(255, 225, 166, 18),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.tired,
+                  texto: 'Desafío 44: Ávido',
+                  color1: Color.fromARGB(255, 0, 0, 0),
+                  color2: Color.fromARGB(255, 225, 18, 149),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.sadCry,
+                  texto: 'Desafío 45: Ansiedad',
+                  color1: Color.fromARGB(255, 147, 57, 57),
+                  color2: Color.fromARGB(255, 14, 152, 92),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.carSide,
+                  texto: 'Desafío 45: Conduce en el presente',
+                  color1: Color.fromARGB(255, 75, 73, 73),
+                  color2: Color.fromARGB(255, 0, 255, 255),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.pizzaSlice,
+                  texto: 'Desafío 47: Observa la comida',
+                  color1: Color.fromARGB(255, 242, 118, 41),
+                  color2: Color.fromARGB(255, 167, 75, 232),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.sun,
+                  texto: 'Desafío 48: Luz',
+                  color1: Color.fromARGB(255, 230, 14, 14),
+                  color2: Color.fromARGB(255, 233, 207, 6),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.microscope,
+                  texto: 'Desafío 49: Checa tu estómago',
+                  color1: Color.fromARGB(255, 94, 3, 103),
+                  color2: Color.fromARGB(255, 174, 172, 174),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.brain,
+                  texto: 'Desafío 50: Conciencia',
+                  color1: Color.fromARGB(255, 164, 10, 120),
+                  color2: Color.fromARGB(255, 6, 154, 6),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.userAlt,
+                  texto: 'Desafío 51: Cuerpo',
+                  color1: Color.fromARGB(255, 1, 160, 158),
+                  color2: Color.fromARGB(255, 101, 65, 3),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.smile,
+                  texto: 'Desafío 52: Sonríe',
+                  color1: Color.fromARGB(255, 225, 237, 4),
+                  color2: Color.fromARGB(255, 189, 189, 188),
+                  onpress: () {}),
+              BotonGordo(
+                  icon: FontAwesomeIcons.userNinja,
+                  texto: 'Desafío 53: Mejora las cosas',
+                  color1: Color.fromARGB(255, 237, 47, 4),
+                  color2: Color.fromARGB(255, 0, 0, 0),
                   onpress: () {}),
             ],
           ),
