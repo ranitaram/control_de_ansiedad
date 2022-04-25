@@ -33,21 +33,42 @@ class _PerfilPageState extends State<PerfilPage> {
               children: [
                 Center(
                   child: Container(
-                    //decoration: BoxDecoration(color: Colors.red),
-                    padding: EdgeInsets.only(top: 20),
-                    child: const CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://res.cloudinary.com/dmuoqsv3b/image/upload/v1635397968/nhpt2xzk7zburfpoofhq.jpg'),
-                      radius: 70.0,
-                    ),
-                  ),
+                      //decoration: BoxDecoration(color: Colors.red),
+                      padding: EdgeInsets.only(top: 20),
+                      child: Container(
+                        width: 150,
+                        height: 150,
+                        child: ('${usuario.img}' != null)
+                            ? FadeInImage(
+                                imageErrorBuilder:
+                                    (context, error, stackTrace) {
+                                  return Container(
+                                    width: 150,
+                                    height: 150,
+                                    child: const Image(
+                                        image:
+                                            AssetImage('assets/no-image.png')),
+                                  );
+                                },
+                                placeholder:
+                                    const AssetImage('assets/loading-1.gif'),
+                                image: NetworkImage('${usuario.img}'))
+                            : const Image(
+                                image: AssetImage('assets/no-image.png')),
+                        decoration: BoxDecoration(color: Colors.transparent),
+                      )
+                      // CircleAvatar(
+                      //   backgroundImage: NetworkImage(usuario.img),
+                      //   radius: 70.0,
+                      // ),
+                      ),
                 ),
                 Positioned(
-                  right: 105,
-                  top: 105,
+                  right: 85,
+                  top: 120,
                   child: IconButton(
-                      color: Colors.blue,
-                      iconSize: 45,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      iconSize: 50,
                       onPressed: () {},
                       icon: FaIcon(Icons.camera_alt)),
                 )
