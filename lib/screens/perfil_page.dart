@@ -35,27 +35,30 @@ class _PerfilPageState extends State<PerfilPage> {
                   child: Container(
                       //decoration: BoxDecoration(color: Colors.red),
                       padding: EdgeInsets.only(top: 20),
-                      child: Container(
-                        width: 150,
-                        height: 150,
-                        child: ('${usuario.img}' != null)
-                            ? FadeInImage(
-                                imageErrorBuilder:
-                                    (context, error, stackTrace) {
-                                  return Container(
-                                    width: 150,
-                                    height: 150,
-                                    child: const Image(
-                                        image:
-                                            AssetImage('assets/no-image.png')),
-                                  );
-                                },
-                                placeholder:
-                                    const AssetImage('assets/loading-1.gif'),
-                                image: NetworkImage('${usuario.img}'))
-                            : const Image(
-                                image: AssetImage('assets/no-image.png')),
-                        decoration: BoxDecoration(color: Colors.transparent),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(80),
+                        child: Container(
+                          width: 150,
+                          height: 150,
+                          child: ('${usuario.img}' != null)
+                              ? FadeInImage(
+                                  imageErrorBuilder:
+                                      (context, error, stackTrace) {
+                                    return Container(
+                                      width: 150,
+                                      height: 150,
+                                      child: const Image(
+                                          image: AssetImage(
+                                              'assets/no-image.png')),
+                                    );
+                                  },
+                                  placeholder:
+                                      const AssetImage('assets/loading-1.gif'),
+                                  image: NetworkImage('${usuario.img}'))
+                              : const Image(
+                                  image: AssetImage('assets/no-image.png')),
+                          decoration: BoxDecoration(color: Colors.transparent),
+                        ),
                       )
                       // CircleAvatar(
                       //   backgroundImage: NetworkImage(usuario.img),

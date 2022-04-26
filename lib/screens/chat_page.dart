@@ -75,20 +75,51 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     // final chatService = Provider.of<ChatService>(context);
     final usuarioPara = chatService.usuarioPara;
+    final usuario = authService.usuario;
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.exit_to_app,
+              color: Colors.black87,
+            )),
         // leading: I,
         backgroundColor: Colors.white,
         title: Column(
           children: [
-            CircleAvatar(
-              child: Text(usuarioPara.nombre.substring(0, 2),
-                  style: TextStyle(fontSize: 12)),
-              backgroundColor: Colors.blue[200],
-              maxRadius: 14,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(80),
+              child: Container(
+                width: 35,
+                height: 35,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: ('${usuarioPara.img}' != null)
+                    ? FadeInImage(
+                        imageErrorBuilder: (context, error, stackTrace) {
+                          return Container(
+                            child: const Image(
+                                image: AssetImage('assets/no-image.png')),
+                          );
+                        },
+                        placeholder: const AssetImage('assets/loading-1.gif'),
+                        image: NetworkImage('${usuarioPara.img}'))
+                    : const Image(image: AssetImage('assets/no-image.png')),
+              ),
             ),
-            SizedBox(height: 3),
+            // CircleAvatar(
+            //   child:
+            //   Text(usuarioPara.nombre.substring(0, 2),
+            //       style: TextStyle(fontSize: 12)),
+            //   backgroundColor: Colors.blue[200],
+            //   maxRadius: 14,
+            // ),
+            SizedBox(height: 2),
             Text(
               usuarioPara.nombre,
               style: TextStyle(color: Colors.black87, fontSize: 15),
@@ -99,7 +130,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
         elevation: 1,
       ),
       body: Container(
-        color: Color.fromARGB(255, 226, 218, 218),
+        color: Color.fromARGB(255, 164, 208, 226),
         child: Column(
           children: [
             Flexible(
@@ -109,12 +140,12 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
               itemBuilder: (_, i) => _messages[i],
               reverse: true,
             )),
-            Divider(
+            const Divider(
               height: 1,
             ),
             //caja de texto
             Container(
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: Color.fromARGB(255, 62, 69, 85),
               child: _inputChat(),
             )
           ],
@@ -126,7 +157,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   Widget _inputChat() {
     return SafeArea(
         child: Container(
-      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      margin: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Row(
         children: [
           Flexible(
@@ -150,7 +181,10 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
               margin: EdgeInsets.symmetric(horizontal: 4.0),
               child: Platform.isIOS
                   ? CupertinoButton(
-                      child: Text('Enviar'),
+                      child: const Text(
+                        'Enviar',
+                        style: TextStyle(color: Colors.white),
+                      ),
                       onPressed: _estaEscribiendo
                           ? () => _handleSubmit(_textController.text.trim())
                           : null,

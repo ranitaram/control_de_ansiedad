@@ -100,10 +100,31 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
     return ListTile(
       title: Text(usuario.nombre),
       subtitle: Text(usuario.correo),
-      leading: CircleAvatar(
-        child: Text(usuario.nombre.substring(0, 2)),
-        backgroundColor: Colors.blue[100],
+      leading: ClipRRect(
+        borderRadius: BorderRadius.circular(80),
+        child: Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: ('${usuario.img}' != null)
+              ? FadeInImage(
+                  imageErrorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      child:
+                          const Image(image: AssetImage('assets/no-image.png')),
+                    );
+                  },
+                  placeholder: const AssetImage('assets/loading-1.gif'),
+                  image: NetworkImage('${usuario.img}'))
+              : const Image(image: AssetImage('assets/no-image.png')),
+        ),
       ),
+      // CircleAvatar(
+      //   child: Text(usuario.nombre.substring(0, 2)),
+      //   backgroundColor: Colors.blue[100],
+      // ),
       trailing: Container(
           width: 10,
           height: 10,

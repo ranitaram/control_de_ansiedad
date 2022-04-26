@@ -31,7 +31,7 @@ class QueAprendimos1Page extends StatelessWidget {
                   BotonEjercicio(
                       icon: FontAwesomeIcons.angellist,
                       texto:
-                          ' Nuestra mano menos capaz es un poco torpe pero con la perseverancia y el tiempo suficiente puede llegar a ser tan capaz como la otra mano y esto nos puede llevar a tener nuevas habilidades que hemos aprendido gracias a la mente de principiante que nos dispusimos inconscientemente al aceptar el desafío.',
+                          'Nuestra mano menos capaz es un poco torpe pero con la perseverancia y el tiempo suficiente puede llegar a ser tan capaz como la otra mano y esto nos puede llevar a tener nuevas habilidades que hemos aprendido gracias a la mente de principiante que nos dispusimos inconscientemente al aceptar el desafío.',
                       color1: Colors.red,
                       color2: Colors.blue,
                       onpress: () {}),
