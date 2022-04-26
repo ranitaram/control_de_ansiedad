@@ -1,3 +1,4 @@
+import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
@@ -67,10 +68,13 @@ class DesafiosPage extends StatelessWidget {
                   }),
               BotonGordo(
                   icon: FontAwesomeIcons.handHoldingHeart,
-                  texto: 'Desafío 4: Ama a tus manos',
+                  texto: 'Desafío 4: Ama tus manos',
                   color1: Color.fromARGB(255, 255, 7, 247),
                   color2: Color.fromARGB(255, 175, 230, 240),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (contex) => Desafio4Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.utensils,
                   texto: 'Desafío 5: A comer',
