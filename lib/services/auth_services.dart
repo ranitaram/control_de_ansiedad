@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:control_de_ansiedad/models/login_response.dart';
 import 'package:control_de_ansiedad/models/usuario.dart';
@@ -11,6 +13,9 @@ import '../global/environment.dart';
 class AuthService with ChangeNotifier {
   late Usuario usuario;
   bool _autenticando = false;
+
+  File?
+      newPictureFile; //aqui se va almacenar la imagen seleccionada y si no existe significa que no ha seleccionado nada o no quiere cambiar la imagen.
 
   // Create storage
   final _storage = new FlutterSecureStorage();
@@ -112,5 +117,12 @@ class AuthService with ChangeNotifier {
 
   Future logout() async {
     await _storage.delete(key: 'token');
+  }
+
+  void updateSelectedUsuarioImage(String path) {
+    newPictureFile =
+        File.fromUri(Uri(path: path)); //aqui busca el archivo y lo crea
+
+    notifyListeners();
   }
 }

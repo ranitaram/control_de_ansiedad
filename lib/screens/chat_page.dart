@@ -145,7 +145,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
             ),
             //caja de texto
             Container(
-              color: Color.fromARGB(255, 62, 69, 85),
+              color: Color.fromARGB(255, 251, 251, 251),
               child: _inputChat(),
             )
           ],
@@ -183,7 +183,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
                   ? CupertinoButton(
                       child: const Text(
                         'Enviar',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                       ),
                       onPressed: _estaEscribiendo
                           ? () => _handleSubmit(_textController.text.trim())

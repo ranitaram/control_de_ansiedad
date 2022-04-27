@@ -5,6 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import 'package:image_picker/image_picker.dart';
+
 class PerfilPage extends StatefulWidget {
   @override
   State<PerfilPage> createState() => _PerfilPageState();
@@ -19,16 +21,6 @@ class _PerfilPageState extends State<PerfilPage> {
       body: Container(
         child: Column(
           children: [
-            // Center(
-            //   child: Container(
-            //     // decoration: BoxDecoration(color: Colors.blue),
-            //     padding: EdgeInsets.only(top: 20),
-            //     child: Text(
-            //       'Cambiar imagen',
-            //       style: GoogleFonts.spaceMono(fontSize: 18),
-            //     ),
-            //   ),
-            // ),
             Stack(
               children: [
                 Center(
@@ -57,14 +49,10 @@ class _PerfilPageState extends State<PerfilPage> {
                                   image: NetworkImage('${usuario.img}'))
                               : const Image(
                                   image: AssetImage('assets/no-image.png')),
-                          decoration: BoxDecoration(color: Colors.transparent),
+                          decoration:
+                              const BoxDecoration(color: Colors.transparent),
                         ),
-                      )
-                      // CircleAvatar(
-                      //   backgroundImage: NetworkImage(usuario.img),
-                      //   radius: 70.0,
-                      // ),
-                      ),
+                      )),
                 ),
                 Positioned(
                   right: 85,
@@ -72,7 +60,18 @@ class _PerfilPageState extends State<PerfilPage> {
                   child: IconButton(
                       color: Color.fromARGB(255, 0, 0, 0),
                       iconSize: 50,
-                      onPressed: () {},
+                      onPressed: () async {
+                        final picker = ImagePicker();
+                        final XFile? pickedFile = await picker.pickImage(
+                            source: ImageSource.gallery, imageQuality: 100);
+
+                        if (pickedFile == null) {
+                          print('No seleccionó nada');
+                          return;
+                        }
+                        print('Tenemos imagen ${pickedFile.path}');
+                        authService.updateSelectedUsuarioImage(pickedFile.path);
+                      },
                       icon: FaIcon(Icons.camera_alt)),
                 )
               ],
@@ -111,7 +110,7 @@ class _PerfilPageState extends State<PerfilPage> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Icon(
                   Icons.star,
                   color: Colors.amber,
@@ -134,7 +133,7 @@ class _PerfilPageState extends State<PerfilPage> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
