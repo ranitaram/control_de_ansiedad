@@ -13,6 +13,8 @@ class PerfilPage extends StatefulWidget {
 }
 
 class _PerfilPageState extends State<PerfilPage> {
+  late String? url;
+
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
@@ -70,7 +72,10 @@ class _PerfilPageState extends State<PerfilPage> {
                           return;
                         }
                         print('Tenemos imagen ${pickedFile.path}');
-                        authService.updateSelectedUsuarioImage(pickedFile.path);
+
+                        // authService.updateSelectedUsuarioImage(pickedFile.path);
+                        // final String? imageUrl =
+                        //     await authService.uploadImage();
                       },
                       icon: FaIcon(Icons.camera_alt)),
                 )
@@ -187,3 +192,10 @@ class _Nombre extends StatelessWidget {
     );
   }
 }
+
+// getImage(String? imagen){
+
+//  if (imagen == null)
+ 
+                                 
+// }

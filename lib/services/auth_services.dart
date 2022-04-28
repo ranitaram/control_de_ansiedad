@@ -125,4 +125,32 @@ class AuthService with ChangeNotifier {
 
     notifyListeners();
   }
+
+  Future<String?> uploadImage() async {
+    if (newPictureFile == null)
+      return null; //medida de seguridad para no subir nada en null y no nos mande un error
+
+    final url = Uri.parse('localhost:8080/api/uploads/usuarios/${usuario.uid}');
+
+    final imageUploadRequest = http.MultipartRequest('POST', url);
+
+    final archivo =
+        await http.MultipartFile.fromPath('archivo', newPictureFile!.path);
+
+    imageUploadRequest.files.add(archivo);
+
+    final streamResponse = await imageUploadRequest.send();
+    final resp = await http.Response.fromStream(streamResponse);
+
+    if (resp.statusCode != 200 && resp.statusCode != null) {
+      print('Algo salio mal');
+      print(resp.body);
+      return null;
+    }
+
+    // newPictureFile = null; //para especificar que me limpie esa propiedad
+
+    final decodeData = jsonDecode(resp.body);
+    return decodeData['img'];
+  }
 }
