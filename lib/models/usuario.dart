@@ -20,6 +20,7 @@ class Usuario {
   String correo;
   bool estado;
   String uid;
+
   String? img;
 
   factory Usuario.fromJson(Map<String, dynamic> json) => Usuario(

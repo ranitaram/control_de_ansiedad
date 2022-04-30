@@ -3,10 +3,12 @@ import 'dart:io';
 import 'package:control_de_ansiedad/models/mensajes_response.dart';
 import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/services/chat_service.dart';
+import 'package:control_de_ansiedad/services/nivel_ansiedad_services.dart';
 import 'package:control_de_ansiedad/services/socket_service.dart';
 import 'package:control_de_ansiedad/widgets/chat_message.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class ChatPage extends StatefulWidget {
@@ -21,6 +23,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
   late ChatService chatService;
   late SocketService socketService;
   late AuthService authService;
+  late NivelAnsiedad estadodeAnimo;
 
   List<ChatMessage> _messages = [];
 
@@ -28,6 +31,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    estadodeAnimo = Provider.of<NivelAnsiedad>(context, listen: false);
     chatService = Provider.of<ChatService>(context, listen: false);
     socketService = Provider.of<SocketService>(context, listen: false);
     authService = Provider.of<AuthService>(context, listen: false);
@@ -120,10 +124,9 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
             //   maxRadius: 14,
             // ),
             SizedBox(height: 2),
-            Text(
-              usuarioPara.nombre,
-              style: TextStyle(color: Colors.black87, fontSize: 15),
-            )
+            Text(usuarioPara.nombre,
+                style: GoogleFonts.spaceMono(
+                    fontSize: 14, color: Color.fromARGB(255, 5, 17, 150)))
           ],
         ),
         centerTitle: true,

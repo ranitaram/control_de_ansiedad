@@ -3,6 +3,7 @@ import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/services/chat_service.dart';
 import 'package:control_de_ansiedad/services/menu_navegacion_services.dart';
 import 'package:control_de_ansiedad/services/news_api_service.dart';
+import 'package:control_de_ansiedad/services/nivel_ansiedad_services.dart';
 import 'package:control_de_ansiedad/services/noticias_services.dart';
 import 'package:control_de_ansiedad/services/socket_service.dart';
 //import 'package:control_de_ansiedad/screens/screens.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => NavegacionNoticasServices()),
         ChangeNotifierProvider(create: (_) => MenuNavegacionServices()),
         ChangeNotifierProvider(create: (_) => NewsApiService()),
+        ChangeNotifierProvider(create: (_) => NivelAnsiedad()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

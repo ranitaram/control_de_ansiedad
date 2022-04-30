@@ -1,5 +1,7 @@
 import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/services/chat_service.dart';
+import 'package:control_de_ansiedad/services/nivel_ansiedad_services.dart';
+
 import 'package:control_de_ansiedad/services/usuarios_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +39,7 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final estadodeAnimo = Provider.of<NivelAnsiedad>(context);
     final authService = Provider.of<AuthService>(context);
     final socketService = Provider.of<SocketService>(context);
     final usuario = authService.usuario;
@@ -96,7 +99,9 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
         itemCount: usuariosDB.length);
   }
 
-  ListTile _usuarioListTile(Usuario usuario) {
+  ListTile _usuarioListTile(
+    Usuario usuario,
+  ) {
     return ListTile(
       title: Text(usuario.nombre),
       subtitle: Text(usuario.correo),

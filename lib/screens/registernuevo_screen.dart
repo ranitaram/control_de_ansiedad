@@ -79,7 +79,7 @@ class _LoginForm extends StatelessWidget {
                     autocorrect: false,
                     keyboardType: TextInputType.name,
                     decoration: InputDecorations.authInputDecoration(
-                        hinText: 'Natalia',
+                        hinText: 'Solo nombre, sin apellidos.',
                         labelText: 'Nombre',
                         prefixIcon: Icons.person),
                     onChanged: (value) => loginForm.name = value,

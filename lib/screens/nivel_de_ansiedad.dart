@@ -1,12 +1,17 @@
 import 'package:control_de_ansiedad/helpers/status_bar.dart';
+import 'package:control_de_ansiedad/services/nivel_ansiedad_services.dart';
+
 import 'package:control_de_ansiedad/widgets/boton_image_nivel.dart';
 import 'package:control_de_ansiedad/widgets/boton_niveldeansieda.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class NivelDeAnsiedadPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final estadodeAnimo = Provider.of<NivelAnsiedad>(context);
+
     cambiarStatusLight();
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
@@ -46,7 +51,8 @@ class NivelDeAnsiedadPage extends StatelessWidget {
                     const Spacer(),
                     GestureDetector(
                       onTap: () {
-                        print('Ataque de panico¡¡');
+                        estadodeAnimo.animo = 'Ataque de pánico';
+                        print('Ataque de pánico¡¡');
                         Navigator.pushNamed(context, 'home');
                       },
                       child: BotonNivel(
@@ -68,6 +74,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
                     const Spacer(),
                     GestureDetector(
                       onTap: () {
+                        estadodeAnimo.animo = 'Mucha ansiedad';
                         print('Mucha Ansiedad¡');
                         Navigator.pushNamed(context, 'home');
                       },
@@ -81,7 +88,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -91,6 +98,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
                     const Spacer(),
                     GestureDetector(
                       onTap: () {
+                        estadodeAnimo.animo = 'Estresado';
                         print('Estresado¡');
                         Navigator.pushNamed(context, 'home');
                       },
@@ -114,7 +122,9 @@ class NivelDeAnsiedadPage extends StatelessWidget {
                     const Spacer(),
                     GestureDetector(
                       onTap: () {
+                        estadodeAnimo.animo = 'Más o menos';
                         print('Más o menos¡');
+
                         Navigator.pushNamed(context, 'home');
                       },
                       child: BotonNivel(
@@ -137,6 +147,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
                     const Spacer(),
                     GestureDetector(
                       onTap: () {
+                        estadodeAnimo.animo = 'Excelente';
                         print('Excelente¡');
                         Navigator.pushNamed(context, 'home');
                       },
