@@ -3,6 +3,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -90,7 +91,10 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 6: Cumplidos sinceros',
                   color1: Color.fromARGB(255, 225, 247, 79),
                   color2: Color.fromARGB(255, 237, 32, 70),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (contex) => Desafio6Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.jenkins,
                   texto: 'Desafío 7: Postura correcta',
