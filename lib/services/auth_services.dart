@@ -120,37 +120,38 @@ class AuthService with ChangeNotifier {
   }
 
   void updateSelectedUsuarioImage(String path) {
+    usuario.img = path;
     newPictureFile =
         File.fromUri(Uri(path: path)); //aqui busca el archivo y lo crea
 
     notifyListeners();
   }
 
-  Future<String?> uploadImage() async {
-    if (newPictureFile == null)
-      return null; //medida de seguridad para no subir nada en null y no nos mande un error
+  // Future<String?> uploadImage() async {
+  //   if (newPictureFile == null)
+  //     return null; //medida de seguridad para no subir nada en null y no nos mande un error
 
-    final url = Uri.parse('localhost:8080/api/uploads/usuarios/${usuario.uid}');
+  //   final url = Uri.parse('localhost:8080/api/uploads/usuarios/${usuario.uid}');
 
-    final imageUploadRequest = http.MultipartRequest('POST', url);
+  //   final imageUploadRequest = http.MultipartRequest('POST', url);
 
-    final archivo =
-        await http.MultipartFile.fromPath('archivo', newPictureFile!.path);
+  //   final archivo =
+  //       await http.MultipartFile.fromPath('archivo', newPictureFile!.path);
 
-    imageUploadRequest.files.add(archivo);
+  //   imageUploadRequest.files.add(archivo);
 
-    final streamResponse = await imageUploadRequest.send();
-    final resp = await http.Response.fromStream(streamResponse);
+  //   final streamResponse = await imageUploadRequest.send();
+  //   final resp = await http.Response.fromStream(streamResponse);
 
-    if (resp.statusCode != 200 && resp.statusCode != null) {
-      print('Algo salio mal');
-      print(resp.body);
-      return null;
-    }
+  //   if (resp.statusCode != 200 && resp.statusCode != null) {
+  //     print('Algo salio mal');
+  //     print(resp.body);
+  //     return null;
+  //   }
 
-    // newPictureFile = null; //para especificar que me limpie esa propiedad
+  //   // newPictureFile = null; //para especificar que me limpie esa propiedad
 
-    final decodeData = jsonDecode(resp.body);
-    return decodeData['img'];
-  }
+  //   final decodeData = jsonDecode(resp.body);
+  //   return decodeData['img'];
+  // }
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:control_de_ansiedad/models/usuario.dart';
 import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/services/nivel_ansiedad_services.dart';
@@ -38,23 +40,25 @@ class _PerfilPageState extends State<PerfilPage> {
                         child: Container(
                           width: 150,
                           height: 150,
-                          child: ('${usuario.img}' != null)
-                              ? FadeInImage(
-                                  imageErrorBuilder:
-                                      (context, error, stackTrace) {
-                                    return Container(
-                                      width: 150,
-                                      height: 150,
-                                      child: const Image(
-                                          image: AssetImage(
-                                              'assets/no-image.png')),
-                                    );
-                                  },
-                                  placeholder:
-                                      const AssetImage('assets/loading-1.gif'),
-                                  image: NetworkImage('${usuario.img}'))
-                              : const Image(
-                                  image: AssetImage('assets/no-image.png')),
+                          child: const Image(
+                              image: AssetImage('assets/no-image.png')),
+                          // ('${usuario.img}' != null)
+                          //     ? FadeInImage(
+                          //         imageErrorBuilder:
+                          //             (context, error, stackTrace) {
+                          //           return Container(
+                          //             width: 150,
+                          //             height: 150,
+                          //             child: const Image(
+                          //                 image: AssetImage(
+                          //                     'assets/no-image.png')),
+                          //           );
+                          //         },
+                          //         placeholder:
+                          //             const AssetImage('assets/loading-1.gif'),
+                          //         image: NetworkImage('${usuario.img}'))
+                          //     : const Image(
+                          //         image: AssetImage('assets/logonegro.png')),
                           decoration:
                               const BoxDecoration(color: Colors.transparent),
                         ),
@@ -76,8 +80,8 @@ class _PerfilPageState extends State<PerfilPage> {
                           return;
                         }
                         print('Tenemos imagen ${pickedFile.path}');
+                        authService.updateSelectedUsuarioImage(pickedFile.path);
 
-                        // authService.updateSelectedUsuarioImage(pickedFile.path);
                         // final String? imageUrl =
                         //     await authService.uploadImage();
                       },
@@ -152,63 +156,6 @@ class _PerfilPageState extends State<PerfilPage> {
                     blurRadius: 10),
               ], borderRadius: BorderRadius.circular(20), color: Colors.white),
             ),
-            // _Nombre(usuario: usuario),
-            // _Correo(usuario: usuario),
-            // Container(
-            //   padding: EdgeInsets.only(top: 10),
-            //   child: Text(
-            //     'Nivel de ansiedad:',
-            //     style: GoogleFonts.spaceMono(
-            //         fontSize: 22,
-            //         color: Colors.blue,
-            //         fontWeight: FontWeight.bold),
-            //   ),
-            // ),
-            // Container(
-            //   // padding: EdgeInsets.only(top: 1),
-            //   child: Text(
-            //     'Ataque de panico',
-            //     style: GoogleFonts.spaceMono(
-            //         fontSize: 20,
-            //         color: Colors.purple,
-            //         fontWeight: FontWeight.bold),
-            //   ),
-            // ),
-            // Container(
-            //   padding: EdgeInsets.only(top: 10),
-            //   child: Text(
-            //     'Calificación de ${usuario.nombre}',
-            //     style: GoogleFonts.spaceMono(
-            //       fontSize: 20,
-            //       color: Colors.black,
-            //     ),
-            //   ),
-            // ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: const [
-            //     Icon(
-            //       Icons.star,
-            //       color: Colors.amber,
-            //     ),
-            //     Icon(
-            //       Icons.star,
-            //       color: Colors.amber,
-            //     ),
-            //     Icon(
-            //       Icons.star,
-            //       color: Colors.amber,
-            //     ),
-            //     Icon(
-            //       Icons.star,
-            //       color: Colors.amber,
-            //     ),
-            //     Icon(
-            //       Icons.star,
-            //       color: Colors.amber,
-            //     ),
-            //   ],
-            // ),
             const SizedBox(
               height: 25,
             ),
@@ -302,9 +249,10 @@ class _Nombre extends StatelessWidget {
   }
 }
 
-// getImage(String? imagen){
+// Widget getImage(String? imagen){
 
 //  if (imagen == null)
+//  return
  
                                  
 // }

@@ -4,6 +4,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -100,7 +101,10 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 7: Postura correcta',
                   color1: Color.fromARGB(255, 59, 178, 242),
                   color2: Color.fromARGB(255, 32, 237, 80),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (contex) => Desafio7Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.listAlt,
                   texto: 'Desafío 8: Lista de agradecimientos',
