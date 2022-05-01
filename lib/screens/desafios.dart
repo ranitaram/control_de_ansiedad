@@ -5,6 +5,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_8.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -108,9 +109,12 @@ class DesafiosPage extends StatelessWidget {
               BotonGordo(
                   icon: FontAwesomeIcons.listAlt,
                   texto: 'Desafío 8: Lista de agradecimientos',
-                  color1: Color.fromARGB(255, 51, 54, 55),
+                  color1: Color.fromARGB(255, 88, 103, 108),
                   color2: Color.fromARGB(255, 165, 22, 205),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (contex) => Desafio8Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.earlybirds,
                   texto: 'Desafío 9: Pon atención a los sonidos',
