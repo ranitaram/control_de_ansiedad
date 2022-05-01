@@ -1,15 +1,15 @@
-import 'package:control_de_ansiedad/screens/acuerdate/acuerdate_8.dart';
+import 'package:control_de_ansiedad/screens/acuerdate/acuerdate_9.dart';
 import 'package:control_de_ansiedad/widgets/boton_ejercicio.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Desafio8Page extends StatelessWidget {
+class Desafio9Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-            title: const Text('Lista de agradecimientos'),
+            title: const Text('Pon atención a los sonidos'),
             backgroundColor: const Color.fromARGB(255, 11, 114, 99)),
         body: Stack(
           children: [
@@ -20,11 +20,11 @@ class Desafio8Page extends StatelessWidget {
                 // scrollDirection: Axis.vertical,
                 children: [
                   BotonEjercicio(
-                      icon: FontAwesomeIcons.listAlt,
+                      icon: FontAwesomeIcons.earlybirds,
                       texto:
-                          'Cuando esté terminando el día, haz una lista de 3 cosas que sucedieron durante el día por las que estás agradecido y al final de la semana díselas a un amigo o alguien de confianza.',
-                      color1: Color.fromARGB(255, 88, 103, 108),
-                      color2: Color.fromARGB(255, 165, 22, 205),
+                          'En el transcurso del día detente y solo oye, escucha los sonidos sutiles en tu cuerpo, en el cuarto, en tu trabajo o donde te encuentres, escucha como si fuera la primera vez y no supieras de donde vienen esos sonidos, intenta oír todos los sonidos.',
+                      color1: Color.fromARGB(255, 5, 76, 99),
+                      color2: Color.fromARGB(255, 228, 57, 208),
                       onpress: () {}),
                 ],
               ),
@@ -35,7 +35,7 @@ class Desafio8Page extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 11, 114, 99),
           onPressed: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Acuerdate8Page()));
+                MaterialPageRoute(builder: (context) => Acuerdate9Page()));
           },
           icon: const FaIcon(
             Icons.chevron_right,
