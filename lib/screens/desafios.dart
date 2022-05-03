@@ -1,5 +1,6 @@
 import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_10.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
@@ -130,7 +131,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 10: Ringtone',
                   color1: Color.fromARGB(255, 155, 159, 160),
                   color2: Color.fromARGB(255, 46, 36, 228),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio10Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.prayingHands,
                   texto: 'Desafío 11: Toca con cariño',
