@@ -98,8 +98,8 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
             ClipRRect(
               borderRadius: BorderRadius.circular(80),
               child: Container(
-                width: 35,
-                height: 35,
+                width: 30,
+                height: 30,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                 ),

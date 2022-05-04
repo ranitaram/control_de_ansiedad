@@ -1,3 +1,4 @@
+import 'package:control_de_ansiedad/screens/consejos.dart';
 import 'package:control_de_ansiedad/screens/desafios.dart';
 import 'package:control_de_ansiedad/screens/noticias_page.dart';
 import 'package:control_de_ansiedad/screens/perfil_page.dart';
@@ -51,7 +52,7 @@ class _Paginas extends StatelessWidget {
         const NoticiasPage(),
         PerfilPage(),
         DesafiosPage(),
-        Container(color: Colors.yellow),
+        ConsejosPage(),
         UsuariosScreen()
       ],
     );
