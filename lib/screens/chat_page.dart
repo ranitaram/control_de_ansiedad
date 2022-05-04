@@ -123,7 +123,7 @@ class _ChatPageState extends State<ChatPage> with TickerProviderStateMixin {
             //   backgroundColor: Colors.blue[200],
             //   maxRadius: 14,
             // ),
-            SizedBox(height: 2),
+            SizedBox(height: 1),
             Text(usuarioPara.nombre,
                 style: GoogleFonts.spaceMono(
                     fontSize: 14, color: Color.fromARGB(255, 5, 17, 150)))

@@ -40,25 +40,27 @@ class _PerfilPageState extends State<PerfilPage> {
                         child: Container(
                           width: 150,
                           height: 150,
-                          child: const Image(
-                              image: AssetImage('assets/no-image.png')),
-                          // ('${usuario.img}' != null)
-                          //     ? FadeInImage(
-                          //         imageErrorBuilder:
-                          //             (context, error, stackTrace) {
-                          //           return Container(
-                          //             width: 150,
-                          //             height: 150,
-                          //             child: const Image(
-                          //                 image: AssetImage(
-                          //                     'assets/no-image.png')),
-                          //           );
-                          //         },
-                          //         placeholder:
-                          //             const AssetImage('assets/loading-1.gif'),
-                          //         image: NetworkImage('${usuario.img}'))
-                          //     : const Image(
-                          //         image: AssetImage('assets/logonegro.png')),
+                          child:
+                              //const Image(
+                              //     image: AssetImage('assets/no-image.png')),
+                              ('${usuario.img}' != null)
+                                  ? FadeInImage(
+                                      imageErrorBuilder:
+                                          (context, error, stackTrace) {
+                                        return Container(
+                                          width: 150,
+                                          height: 150,
+                                          child: const Image(
+                                              image: AssetImage(
+                                                  'assets/no-image.png')),
+                                        );
+                                      },
+                                      placeholder: const AssetImage(
+                                          'assets/loading-1.gif'),
+                                      image: NetworkImage('${usuario.img}'))
+                                  : const Image(
+                                      image:
+                                          AssetImage('assets/logonegro.png')),
                           decoration:
                               const BoxDecoration(color: Colors.transparent),
                         ),
