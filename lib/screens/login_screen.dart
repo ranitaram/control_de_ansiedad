@@ -1,119 +1,114 @@
-import 'package:control_de_ansiedad/providers/login_form_provider.dart';
-import 'package:control_de_ansiedad/ui/input_decorations.dart';
-import 'package:control_de_ansiedad/widgets/auth_background.dart';
-import 'package:control_de_ansiedad/widgets/widgets.dart';
+import 'package:control_de_ansiedad/helpers/mostrar_alerta.dart';
+import 'package:control_de_ansiedad/services/auth_services.dart';
+import 'package:control_de_ansiedad/services/socket_service.dart';
+import 'package:control_de_ansiedad/widgets/custom_logo.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../widgets/boton_azul.dart';
+import '../widgets/custom_input.dart';
+import '../widgets/custom_labels.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AuthBackground(
-            child: SingleChildScrollView(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 250,
-          ),
-          CardContainer(
-              child: Column(
+      backgroundColor: Color.fromARGB(255, 95, 210, 218),
+      body: SafeArea(
+          child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.9,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const SizedBox(height: 10),
-              Text(
-                'Login',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              ChangeNotifierProvider(
-                  create: (_) => LoginFormProvider(), child: _LoginForm()),
+              Logo(),
+              _Form(),
+              Labels(),
+              const Text(
+                'Terminos y condiciones de uso',
+                style: TextStyle(fontWeight: FontWeight.w200),
+              )
             ],
-          )),
-          const SizedBox(
-            height: 50,
           ),
-          const Text(
-            'Crear una nueva cuenta',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 50,
-          )
-        ],
-      ),
-    )));
+        ),
+      )),
+    );
   }
 }
 
-class _LoginForm extends StatelessWidget {
-  const _LoginForm({Key? key}) : super(key: key);
+class Logo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CustomLogo(titulo: 'Login');
+  }
+}
+
+class _Form extends StatefulWidget {
+  @override
+  __FormState createState() => __FormState();
+}
+
+class __FormState extends State<_Form> {
+  final emailCtrl = TextEditingController();
+  final passCtrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final loginForm = Provider.of<LoginFormProvider>(context);
-    return Form(
-        key: loginForm.formKey,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        child: Column(
-          children: [
-            TextFormField(
-              autocorrect: false,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecorations.authInputDecoration(
-                  hinText: 'holamundo@gmail.com',
-                  labelText: 'Correo electrónico',
-                  prefixIcon: Icons.alternate_email_rounded),
-              onChanged: (value) => loginForm.email = value,
-              validator: (value) {
-                String pattern =
-                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-                RegExp regExp = RegExp(pattern);
-                return regExp.hasMatch(value ?? '')
-                    ? null
-                    : 'El valor ingresado no luce como un correo electrónico';
-              },
-            ),
-            const SizedBox(height: 30),
-            TextFormField(
-              autocorrect: false,
-              obscureText: true,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecorations.authInputDecoration(
-                  hinText: '**********',
-                  labelText: 'Contraseña',
-                  prefixIcon: Icons.lock_clock_rounded),
-              onChanged: (value) => loginForm.password = value,
-              validator: (value) {
-                return (value != null && value.length >= 6)
-                    ? null
-                    : 'la contrasea debe ser igual o mayor a 6 caracteres';
-              },
-            ),
-            const SizedBox(height: 30),
-            MaterialButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                disabledColor: Colors.grey,
-                elevation: 0,
-                color: Colors.lightBlue,
-                child: Text(
-                  loginForm.isLoading ? 'Espere...' : 'Ingresar',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: loginForm.isLoading
-                    ? null
-                    : () async {
-                        FocusScope.of(context).unfocus();
-                        if (!loginForm.isValidForm()) return;
-                        loginForm.isLoading = true;
-                        await Future.delayed(Duration(seconds: 2));
-                        loginForm.isLoading = false;
-                        Navigator.pushReplacementNamed(context, 'home');
-                      })
-          ],
-        ));
+    final authService = Provider.of<AuthService>(context);
+    final socketService = Provider.of<SocketService>(context);
+
+    return Container(
+      margin: EdgeInsets.only(top: 40),
+      padding: EdgeInsets.symmetric(horizontal: 50),
+      child: Column(
+        children: [
+          CustomInput(
+            icon: Icons.mail_outline,
+            placeholder: 'Correo',
+            keyboardType: TextInputType.emailAddress,
+            textController: emailCtrl,
+          ),
+          CustomInput(
+            icon: Icons.lock_outline,
+            placeholder: 'Contraseña',
+            isPassword: true,
+            textController: passCtrl,
+          ),
+          BotonAzul(
+            text: 'Ingresar',
+            onpressed: authService.autenticando
+                ? null
+                : () async {
+                    FocusScope.of(context).unfocus();
+                    final loginOk = await authService.login(
+                        emailCtrl.text.trim(), passCtrl.text.trim());
+
+                    if (loginOk) {
+                      socketService.connect();
+
+                      Navigator.pushReplacementNamed(context, 'home');
+                    } else {
+                      //mostrar alerta
+                      mostrarAlerta(
+                          context, 'Login incorrecto', 'Intente nuevamente');
+                    }
+                  },
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class Labels extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const CustomLabels(
+      ruta: 'register',
+      h2: 'Crea una ahora!',
+      h3: '¿No tienes una cuenta?',
+    );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class LoginFormProvider extends ChangeNotifier {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  String name = '';
   String email = '';
   String password = '';
 
@@ -18,7 +19,7 @@ class LoginFormProvider extends ChangeNotifier {
     print(formKey.currentState?.validate());
 
     // ignore: avoid_print
-    print('$email - $password');
+    print('$email - $password - $name');
 
     return formKey.currentState?.validate() ?? false;
   }

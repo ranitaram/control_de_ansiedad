@@ -13,30 +13,8 @@ class AuthBackground extends StatelessWidget {
       child: Stack(
         children: [
           const _PurpleBox(),
-          const _HeaderIcon(),
           child,
         ],
-      ),
-    );
-  }
-}
-
-class _HeaderIcon extends StatelessWidget {
-  const _HeaderIcon({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        width: double.infinity,
-        margin: const EdgeInsets.only(top: 30),
-        child: const Icon(
-          Icons.person,
-          color: Colors.white,
-          size: 100,
-        ),
       ),
     );
   }
@@ -51,7 +29,7 @@ class _PurpleBox extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      height: size.height * 0.4,
+      height: size.height * 0.6,
       decoration: _purpleBackground(),
       child: Stack(
         children: const [

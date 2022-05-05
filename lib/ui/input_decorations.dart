@@ -11,6 +11,7 @@ class InputDecorations {
         focusedBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.greenAccent, width: 2)),
         hintText: hinText,
+        hintStyle: TextStyle(color: Colors.grey),
         labelText: labelText,
         labelStyle: const TextStyle(color: Colors.blueGrey),
         prefixIcon: prefixIcon != null

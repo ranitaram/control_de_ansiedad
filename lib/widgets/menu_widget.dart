@@ -14,7 +14,7 @@ class MenuWidget extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            child: Container(),
+            child: SafeArea(child: Container()),
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('assets/logonegro.png'), fit: BoxFit.cover),
@@ -27,14 +27,6 @@ class MenuWidget extends StatelessWidget {
             ),
             title: const Text('Inicio'),
             onTap: () => Navigator.pushReplacementNamed(context, 'home'),
-          ),
-          ListTile(
-            leading: const Icon(
-              Icons.settings,
-              color: Colors.blue,
-            ),
-            title: const Text('Ajustes'),
-            onTap: () => Navigator.pushReplacementNamed(context, 'settings'),
           ),
           ListTile(
               leading: const Icon(
@@ -50,16 +42,16 @@ class MenuWidget extends StatelessWidget {
                   })),
           // ListTile(
           //     leading: const Icon(
-          //       Icons.add_to_home_screen,
+          //       Icons.lightbulb_outlined,
           //       color: Colors.blue,
           //     ),
-          //     title: const Text('Custom Theme'),
+          //     title: const Text('Personalizado'),
           //     trailing: Switch.adaptive(
           //         value: appTheme.customTheme,
           //         activeColor: Colors.blue,
           //         onChanged: (value) {
           //           appTheme.customTheme = value;
-          //         }))
+          //         })),
         ],
       ),
     );
