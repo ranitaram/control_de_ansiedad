@@ -15,7 +15,7 @@ class LoginNuevoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 236, 172, 201),
+      backgroundColor: Color.fromARGB(255, 112, 79, 221),
       body: SafeArea(
           child: ListView(children: [
         Container(
