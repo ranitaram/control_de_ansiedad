@@ -1,18 +1,19 @@
-import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
-import 'package:control_de_ansiedad/screens/desafios/desafio_10.dart';
-import 'package:control_de_ansiedad/screens/desafios/desafio_11.dart';
-import 'package:control_de_ansiedad/screens/desafios/desafio_12.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
+import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_8.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_9.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_10.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_11.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_12.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_13.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
-import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ItemBoton {
@@ -166,7 +167,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 13: Evita los medios',
                   color1: Color.fromARGB(255, 55, 196, 228),
                   color2: Color.fromARGB(255, 114, 6, 6),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio13Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.eye,
                   texto: 'Desafío 14: Mirada',
