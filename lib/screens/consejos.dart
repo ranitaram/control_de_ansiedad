@@ -1,4 +1,6 @@
+import 'package:control_de_ansiedad/screens/consejos/consejo_ejercicios.dart';
 import 'package:control_de_ansiedad/screens/consejos/consejo_mindfulness.dart';
+import 'package:control_de_ansiedad/screens/consejos/consejo_ojos.dart';
 import 'package:control_de_ansiedad/screens/consejos/consejo_respiracion.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
 
@@ -73,7 +75,12 @@ class ConsejosPage extends StatelessWidget {
                     texto: 'Cierra los ojos',
                     color1: Color.fromARGB(255, 55, 199, 228),
                     color2: Color.fromARGB(255, 136, 171, 155),
-                    onpress: () {}),
+                    onpress: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => ConsejoOjos()));
+                    }),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
@@ -87,7 +94,12 @@ class ConsejosPage extends StatelessWidget {
                     texto: 'Haz ejercicios ligeros',
                     color1: Color.fromARGB(255, 55, 199, 228),
                     color2: Color.fromARGB(255, 136, 171, 155),
-                    onpress: () {}),
+                    onpress: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => ConsejoEjercicios()));
+                    }),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
