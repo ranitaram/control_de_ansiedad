@@ -15,11 +15,10 @@ class RegisternuevoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 95, 210, 218),
+      backgroundColor: Color.fromARGB(255, 155, 194, 250),
       body: SafeArea(
-          child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Container(
+          child: ListView(children: [
+        Container(
           height: MediaQuery.of(context).size.height * 09,
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,7 +35,7 @@ class RegisternuevoScreen extends StatelessWidget {
             ],
           ),
         ),
-      )),
+      ])),
     );
   }
 }

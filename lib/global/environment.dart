@@ -6,9 +6,10 @@ import 'dart:io';
 class Environment {
   //servicio rest
   static String apiUrl = Platform.isAndroid
-      ? 'http://10.0.2.2:8080/api'
+      ? 'http://192.168.100.25:8080/api'
       : 'http://localhost:8080/api';
   //servivio de socket
-  static String socketUrl =
-      Platform.isAndroid ? 'http://10.0.2.2:8080' : 'http://localhost:8080';
+  static String socketUrl = Platform.isAndroid
+      ? 'http://192.168.100.25:8080'
+      : 'http://localhost:8080';
 }

@@ -14,7 +14,7 @@ class BotonAzul extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
               color: Colors.blue, borderRadius: BorderRadius.circular(32)),
-          width: double.infinity,
+          width: 150,
           height: 55,
           child: Center(
             child: Text(
