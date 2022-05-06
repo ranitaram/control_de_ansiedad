@@ -2,6 +2,7 @@ import 'package:control_de_ansiedad/screens/consejos/consejo_ejercicios.dart';
 import 'package:control_de_ansiedad/screens/consejos/consejo_mindfulness.dart';
 import 'package:control_de_ansiedad/screens/consejos/consejo_ojos.dart';
 import 'package:control_de_ansiedad/screens/consejos/consejo_respiracion.dart';
+import 'package:control_de_ansiedad/screens/consejos/consejo_vaporub.dart';
 import 'package:control_de_ansiedad/widgets/boron_gordo.dart';
 
 import 'package:flutter/material.dart';
@@ -113,7 +114,12 @@ class ConsejosPage extends StatelessWidget {
                     texto: 'Mantén en la mano un vaporub',
                     color1: Color.fromARGB(255, 55, 199, 228),
                     color2: Color.fromARGB(255, 136, 171, 155),
-                    onpress: () {}),
+                    onpress: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => ConsejoVaporub()));
+                    }),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
