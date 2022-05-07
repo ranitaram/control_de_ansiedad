@@ -1,4 +1,5 @@
 import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_14.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
@@ -176,14 +177,19 @@ class DesafiosPage extends StatelessWidget {
               BotonGordo(
                   icon: FontAwesomeIcons.eye,
                   texto: 'Desafío 14: Mirada',
-                  color1: Color.fromARGB(255, 108, 43, 238),
-                  color2: Color.fromARGB(255, 108, 54, 7),
-                  onpress: () {}),
+                  color1: Color.fromARGB(255, 123, 70, 227),
+                  color2: Color.fromARGB(255, 91, 108, 7),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio14Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.questionCircle,
                   texto: 'Desafío 15: Anónimo',
-                  color1: Color.fromARGB(255, 162, 104, 4),
-                  color2: Color.fromARGB(255, 85, 41, 1),
+                  color1: Color.fromARGB(255, 4, 104, 162),
+                  color2: Color.fromARGB(255, 158, 84, 123),
                   onpress: () {}),
               BotonGordo(
                   icon: FontAwesomeIcons.lungs,
