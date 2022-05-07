@@ -1,5 +1,6 @@
 import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_14.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_15.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
@@ -190,7 +191,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 15: Anónimo',
                   color1: Color.fromARGB(255, 4, 104, 162),
                   color2: Color.fromARGB(255, 158, 84, 123),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio15Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.lungs,
                   texto: 'Desafío 16: Respira',

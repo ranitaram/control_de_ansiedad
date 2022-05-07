@@ -14,7 +14,7 @@ class InicioPage extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 30),
@@ -28,7 +28,7 @@ class InicioPage extends StatelessWidget {
                       decoration: TextDecoration.none),
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 30),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -62,7 +62,7 @@ class InicioPage extends StatelessWidget {
               ),
               Center(child: Lottie.asset('assets/-yoga-relax.json')),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               GestureDetector(
                 onTap: () {

@@ -173,7 +173,7 @@ class Labels extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CustomLabels(
       ruta: 'loginnuevo',
-      h2: '¡Ingresa ahora!',
+      h2: '¡Ingresa ahora a tu cuenta!',
       h3: '¿Ya tienes una cuenta?',
     );
   }
