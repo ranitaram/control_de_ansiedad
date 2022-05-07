@@ -14,38 +14,37 @@ class Desafio7Page extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              margin: const EdgeInsets.only(top: 15),
               child: PageView(
-                controller: PageController(viewportFraction: 0.8),
+                controller: PageController(viewportFraction: 0.7),
                 scrollDirection: Axis.vertical,
                 children: [
                   BotonEjercicio(
                       icon: FontAwesomeIcons.jenkins,
                       texto:
                           'Toma conciencia de tu postura, ¿en qué postura estás y cómo se siente en el cuerpo? Eso es lo que te deberías de preguntar en cada momento que estés sentado,',
-                      color1: Color.fromARGB(255, 59, 178, 242),
-                      color2: Color.fromARGB(255, 32, 237, 80),
+                      color1: const Color.fromARGB(255, 59, 178, 242),
+                      color2: const Color.fromARGB(255, 32, 237, 80),
                       onpress: () {}),
                   BotonEjercicio(
                       icon: FontAwesomeIcons.jenkins,
                       texto:
                           'en tu escritorio, es tu silla de la escuela o en el carro y pensar si cerraras los ojos, ¿dónde estás sintiendo presión o movimiento?',
-                      color1: Color.fromARGB(255, 59, 178, 242),
-                      color2: Color.fromARGB(255, 32, 237, 80),
+                      color1: const Color.fromARGB(255, 59, 178, 242),
+                      color2: const Color.fromARGB(255, 32, 237, 80),
                       onpress: () {}),
                   BotonEjercicio(
                       icon: FontAwesomeIcons.jenkins,
                       texto:
                           'Ser consiente de la postura también significa notar y ajustar la postura muchas veces en el día,',
-                      color1: Color.fromARGB(255, 59, 178, 242),
-                      color2: Color.fromARGB(255, 32, 237, 80),
+                      color1: const Color.fromARGB(255, 59, 178, 242),
+                      color2: const Color.fromARGB(255, 32, 237, 80),
                       onpress: () {}),
                   BotonEjercicio(
                       icon: FontAwesomeIcons.jenkins,
                       texto:
                           'cuando esté comiendo siéntete derecho con los pies bien apoyados en el piso y las rodillas ligeramente separadas y endereza tu columna, esto te permitirá respirar mejor.',
-                      color1: Color.fromARGB(255, 59, 178, 242),
-                      color2: Color.fromARGB(255, 32, 237, 80),
+                      color1: const Color.fromARGB(255, 59, 178, 242),
+                      color2: const Color.fromARGB(255, 32, 237, 80),
                       onpress: () {}),
                 ],
               ),
@@ -53,7 +52,7 @@ class Desafio7Page extends StatelessWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Color.fromARGB(255, 11, 114, 99),
+          backgroundColor: const Color.fromARGB(255, 11, 114, 99),
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => Acuerdate7Page()));

@@ -15,17 +15,16 @@ class Desafio10Page extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              margin: const EdgeInsets.only(top: 15),
               child: PageView(
-                controller: PageController(viewportFraction: 0.8),
+                controller: PageController(viewportFraction: 0.7),
                 scrollDirection: Axis.vertical,
                 children: [
                   BotonEjercicio(
                       icon: FontAwesomeIcons.phone,
                       texto:
                           'Cuando escuches el teléfono que suena, deja lo que estás haciendo y realiza 3 respiraciones para asentar a mente antes de responder. Si tu trabajo requiere de contestar llamadas continuamente puedes acortar esto a unas 2 respiraciones.',
-                      color1: Color.fromARGB(255, 155, 159, 160),
-                      color2: Color.fromARGB(255, 46, 36, 228),
+                      color1: const Color.fromARGB(255, 155, 159, 160),
+                      color2: const Color.fromARGB(255, 46, 36, 228),
                       onpress: () {}),
                   BotonEjercicio(
                       icon: FontAwesomeIcons.phone,
@@ -40,7 +39,7 @@ class Desafio10Page extends StatelessWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Color.fromARGB(255, 11, 114, 99),
+          backgroundColor: const Color.fromARGB(255, 11, 114, 99),
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => Acuerdate10Page()));

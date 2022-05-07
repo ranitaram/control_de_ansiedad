@@ -14,9 +14,8 @@ class Desafio3Page extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 15),
               child: PageView(
-                controller: PageController(viewportFraction: 0.8),
+                controller: PageController(viewportFraction: 0.7),
                 scrollDirection: Axis.vertical,
                 children: [
                   BotonEjercicio(
@@ -39,7 +38,7 @@ class Desafio3Page extends StatelessWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Color.fromARGB(255, 11, 114, 99),
+          backgroundColor: const Color.fromARGB(255, 11, 114, 99),
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => Acuerdate3Page()));

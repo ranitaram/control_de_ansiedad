@@ -15,24 +15,23 @@ class Acuerdate12Page extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              margin: const EdgeInsets.only(top: 15),
               child: PageView(
-                controller: PageController(viewportFraction: 0.8),
+                controller: PageController(viewportFraction: 0.7),
                 scrollDirection: Axis.vertical,
                 children: [
                   BotonEjercicio(
                       icon: FontAwesomeIcons.stopwatch,
                       texto:
                           'Puedes poner de imagen de fondo o protector de pantalla en tu celular la imagen de un reloj o la palabra que diga aguarda,',
-                      color1: Color.fromARGB(255, 228, 55, 228),
-                      color2: Color.fromARGB(255, 244, 210, 16),
+                      color1: const Color.fromARGB(255, 228, 55, 228),
+                      color2: const Color.fromARGB(255, 244, 210, 16),
                       onpress: () {}),
                   BotonEjercicio(
                       icon: FontAwesomeIcons.stopwatch,
                       texto:
                           'ya que en la mayoría de las veces, cuando estamos esperando algo o alguien, solemos sacar nuestro teléfono para mirarlo y distraernos, o pegar esa pequeña  en tu reloj si es que usas.',
-                      color1: Color.fromARGB(255, 228, 55, 228),
-                      color2: Color.fromARGB(255, 244, 210, 16),
+                      color1: const Color.fromARGB(255, 228, 55, 228),
+                      color2: const Color.fromARGB(255, 244, 210, 16),
                       onpress: () {}),
                 ],
               ),
@@ -45,7 +44,7 @@ class Acuerdate12Page extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25.0),
-                    color: Color.fromARGB(255, 106, 4, 179)
+                    color: const Color.fromARGB(255, 106, 4, 179)
                     // gradient: const RadialGradient(
                     //     radius: 2.0, colors: [Colors.blue, Colors.black])
                     ),
@@ -95,7 +94,7 @@ class Acuerdate12Page extends StatelessWidget {
                   height: 30,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25.0),
-                      color: Color.fromARGB(255, 106, 4, 179)
+                      color: const Color.fromARGB(255, 106, 4, 179)
                       // gradient: const RadialGradient(
                       //     radius: 0.9, colors: [Colors.blue, Colors.black]),
                       ),
