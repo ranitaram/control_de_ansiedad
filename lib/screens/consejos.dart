@@ -1,4 +1,6 @@
 import 'package:control_de_ansiedad/screens/consejos/consejo_ejercicios.dart';
+import 'package:control_de_ansiedad/screens/consejos/consejo_imagina.dart';
+import 'package:control_de_ansiedad/screens/consejos/consejo_mantra.dart';
 import 'package:control_de_ansiedad/screens/consejos/consejo_mindfulness.dart';
 import 'package:control_de_ansiedad/screens/consejos/consejo_ojos.dart';
 import 'package:control_de_ansiedad/screens/consejos/consejo_respiracion.dart';
@@ -133,7 +135,12 @@ class ConsejosPage extends StatelessWidget {
                     texto: 'Repite un mantra internamente',
                     color1: Color.fromARGB(255, 55, 199, 228),
                     color2: Color.fromARGB(255, 136, 171, 155),
-                    onpress: () {}),
+                    onpress: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => ConsejoMantra()));
+                    }),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
@@ -147,7 +154,12 @@ class ConsejosPage extends StatelessWidget {
                     texto: 'Imagina tu lugar feliz',
                     color1: Color.fromARGB(255, 55, 199, 228),
                     color2: Color.fromARGB(255, 136, 171, 155),
-                    onpress: () {}),
+                    onpress: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => ConsejoImagina()));
+                    }),
               ],
             ),
           )
