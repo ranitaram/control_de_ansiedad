@@ -3,6 +3,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_14.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_15.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_16.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_17.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_18.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
@@ -226,8 +227,13 @@ class DesafiosPage extends StatelessWidget {
                   icon: FontAwesomeIcons.tree,
                   texto: 'Desafío 18: Árboles',
                   color1: const Color.fromARGB(255, 74, 77, 73),
-                  color2: const Color.fromARGB(255, 43, 5, 235),
-                  onpress: () {}),
+                  color2: const Color.fromARGB(255, 100, 74, 225),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio18Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.handSparkles,
                   texto: 'Desafío 19: Reposa tus manos',
