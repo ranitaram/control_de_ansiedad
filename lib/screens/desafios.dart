@@ -1,6 +1,7 @@
 import 'package:control_de_ansiedad/screens/desafios/desafio_1.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_14.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_15.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_16.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
@@ -203,7 +204,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 16: Respira',
                   color1: const Color.fromARGB(255, 237, 114, 7),
                   color2: const Color.fromARGB(255, 12, 199, 187),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio16Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.doorOpen,
                   texto: 'Desafío 17: Lugares',
