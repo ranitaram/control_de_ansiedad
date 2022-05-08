@@ -6,6 +6,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_17.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_18.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_19.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_20.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
@@ -249,9 +250,14 @@ class DesafiosPage extends StatelessWidget {
               BotonGordo(
                   icon: FontAwesomeIcons.stripeS,
                   texto: 'Desafío 20: Sí',
-                  color1: const Color.fromARGB(255, 33, 26, 104),
-                  color2: const Color.fromARGB(255, 87, 54, 5),
-                  onpress: () {}),
+                  color1: const Color.fromARGB(255, 29, 162, 115),
+                  color2: const Color.fromARGB(255, 118, 56, 138),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio20Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.bold,
                   texto: 'Desafío 21: Blue',
