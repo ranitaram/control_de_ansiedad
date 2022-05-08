@@ -114,8 +114,8 @@ class TarjetaBoton extends StatelessWidget {
                   blurRadius: 10),
             ],
             borderRadius: BorderRadius.circular(50),
-            gradient:
-                LinearGradient(colors: [Color(0xff906EF5), Color(0xff536CF6)])),
+            gradient: const LinearGradient(
+                colors: [Color(0xff906EF5), Color(0xff536CF6)])),
       ),
     );
   }
