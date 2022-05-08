@@ -4,6 +4,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_15.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_16.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_17.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_18.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_19.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
@@ -239,7 +240,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 19: Reposa tus manos',
                   color1: const Color.fromARGB(255, 28, 41, 24),
                   color2: const Color.fromARGB(255, 204, 235, 5),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio19Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.stripeS,
                   texto: 'Desafío 20: Sí',
