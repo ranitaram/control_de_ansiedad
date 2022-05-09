@@ -4,8 +4,10 @@ import 'package:control_de_ansiedad/services/auth_services.dart';
 import 'package:control_de_ansiedad/services/socket_service.dart';
 import 'package:control_de_ansiedad/widgets/boton_azul.dart';
 import 'package:control_de_ansiedad/widgets/custom_labels.dart';
-import 'package:control_de_ansiedad/widgets/custom_logo.dart';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/login_form_provider.dart';
@@ -15,7 +17,7 @@ class LoginNuevoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 112, 79, 221),
+      backgroundColor: Color.fromARGB(255, 155, 194, 250),
       body: SafeArea(
           child: ListView(children: [
         Container(
@@ -23,15 +25,30 @@ class LoginNuevoScreen extends StatelessWidget {
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const CustomLogo(titulo: 'Login'),
-              const SizedBox(height: 20),
+              // const CustomLogo(titulo: 'Login'),
+              const SizedBox(height: 15),
+              Container(
+                width: 140,
+                height: 60,
+                // decoration: BoxDecoration(color: Colors.red.withOpacity(0.5)),
+                child: Center(
+                    child: Text(
+                  'Acceso',
+                  style: GoogleFonts.spaceMono(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue[700]),
+                )),
+              ),
+              const SizedBox(height: 25),
               ChangeNotifierProvider(
                 create: (_) => LoginFormProvider(),
                 child: _LoginForm(),
               ),
               // _Form(),
               const SizedBox(height: 10),
-              Labels()
+              Labels(),
+              Center(child: Lottie.asset('assets/hola.json')),
             ],
           ),
         ),

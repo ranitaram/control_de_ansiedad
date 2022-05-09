@@ -7,6 +7,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_18.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_19.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_20.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_21.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
@@ -263,7 +264,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 21: Blue',
                   color1: const Color.fromARGB(255, 74, 199, 237),
                   color2: const Color.fromARGB(255, 8, 102, 216),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio21Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.shoePrints,
                   texto: 'Desafío 22: Pies',

@@ -13,7 +13,8 @@ class BotonAzul extends StatelessWidget {
         onPressed: onpressed,
         child: Container(
           decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(32)),
+              color: Colors.blue.withOpacity(0.7),
+              borderRadius: BorderRadius.circular(32)),
           width: 150,
           height: 55,
           child: Center(
