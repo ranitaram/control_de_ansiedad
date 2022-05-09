@@ -19,7 +19,7 @@ class ConsejoRespiracion extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 5),
               child: PageView(
-                controller: PageController(viewportFraction: 0.8),
+                controller: PageController(viewportFraction: 0.6),
                 scrollDirection: Axis.vertical,
                 children: [
                   Center(
