@@ -3,6 +3,8 @@ import 'package:control_de_ansiedad/widgets/lista_noticias.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:url_launcher/url_launcher_string.dart';
+
 class ContenidoPage extends StatelessWidget {
   final Article noticia;
 
@@ -22,22 +24,24 @@ class ContenidoPage extends StatelessWidget {
         //       icon: FaIcon(Icons.chevron_left))
         // ],
       ),
-      body: Container(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            TarjetaTitulo(noticia),
-            const SizedBox(height: 20),
-            TarjetaImagen(noticia),
-            const SizedBox(
-              height: 20,
-            ),
-            TarjetaContenido(noticia),
-            const SizedBox(height: 30),
-            TarjetaUrl(noticia)
-          ],
+      body: ListView(children: [
+        Container(
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              TarjetaTitulo(noticia),
+              const SizedBox(height: 10),
+              TarjetaImagen(noticia),
+              const SizedBox(
+                height: 20,
+              ),
+              TarjetaContenido(noticia),
+              const SizedBox(height: 10),
+              TarjetaUrl(noticia)
+            ],
+          ),
         ),
-      ),
+      ]),
     );
   }
 }
@@ -57,11 +61,13 @@ class TarjetaUrl extends StatelessWidget {
         style: elevatedButtonstyle,
         onPressed: () async {
           String url = noticia.url;
-          if (await canLaunch(url)) {
+
+          if (await canLaunchUrlString(url)) {
             await launch(url,
                 forceSafariVC: true,
                 forceWebView: true,
-                enableJavaScript: true);
+                enableJavaScript: true,
+                enableDomStorage: true);
           }
         },
         child: Container(
