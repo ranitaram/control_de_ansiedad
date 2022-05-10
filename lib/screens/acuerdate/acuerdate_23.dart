@@ -21,7 +21,8 @@ class Acuerdate23Page extends StatelessWidget {
                 children: [
                   BotonEjercicio(
                       icon: FontAwesomeIcons.creativeCommonsZero,
-                      texto: '',
+                      texto:
+                          'Coloca cuadrados blancos de papel, o notas que digan “Espacio” en lugares donde los veas.',
                       color1: const Color.fromARGB(255, 225, 159, 46),
                       color2: const Color.fromARGB(255, 120, 108, 108),
                       onpress: () {}),

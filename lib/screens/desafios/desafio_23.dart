@@ -20,7 +20,8 @@ class Desafio23Page extends StatelessWidget {
                 children: [
                   BotonEjercicio(
                       icon: FontAwesomeIcons.creativeCommonsZero,
-                      texto: '',
+                      texto:
+                          'Con tanta frecuencia como sea posible, desliza la conciencia de los objetos a los espacios que los rodean. Por ejemplo, nota el espacio vacío en lugar del mobiliario, la gente u otros objetos visuales.',
                       color1: const Color.fromARGB(255, 225, 159, 46),
                       color2: const Color.fromARGB(255, 120, 108, 108),
                       onpress: () {}),
