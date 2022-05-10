@@ -2,8 +2,8 @@ import 'package:control_de_ansiedad/models/news_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-final _UrlNews = 'https://newsapi.org/v2';
-final _ApiKey = '92259de6bd424aa5bc6426af37956b7d';
+const _UrlNews = 'https://newsapi.org/v2';
+const _ApiKey = '92259de6bd424aa5bc6426af37956b7d';
 
 class NewsApiService with ChangeNotifier {
   List<Article> headlines = [];

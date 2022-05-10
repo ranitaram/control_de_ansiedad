@@ -14,7 +14,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
 
     cambiarStatusLight();
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -22,27 +22,13 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              Container(
-                alignment: Alignment.center,
-                width: 300,
-                height: 70,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Colors.transparent,
-                ),
-                child: Text(
-                  '¿Cómo te sientes en este momento?',
-                  style: GoogleFonts.spaceMono(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.amber,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
+              const ComoTeSientes(),
+              const SizedBox(
+                height: 40,
               ),
               Container(
                 //margin: EdgeInsets.symmetric(vertical: 3),
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -65,7 +51,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 5),
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -88,7 +74,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 10),
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -112,7 +98,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -137,7 +123,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -162,6 +148,34 @@ class NivelDeAnsiedadPage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ComoTeSientes extends StatelessWidget {
+  const ComoTeSientes({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      width: 300,
+      height: 70,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(100),
+        color: Colors.transparent,
+      ),
+      child: Text(
+        '¿Cómo te sientes en este momento?',
+        style: GoogleFonts.spaceMono(
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color: Colors.amber,
+        ),
+        textAlign: TextAlign.center,
       ),
     );
   }
