@@ -92,6 +92,7 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
   }
 
   ListView _listViewUsuarios() {
+    print(usuariosDB.length);
     return ListView.separated(
         physics: BouncingScrollPhysics(),
         itemBuilder: (_, i) => _usuarioListTile(usuariosDB[i]),

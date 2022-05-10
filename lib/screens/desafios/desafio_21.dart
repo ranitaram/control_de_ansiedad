@@ -20,7 +20,8 @@ class Desafio21Page extends StatelessWidget {
                 children: [
                   BotonEjercicio(
                       icon: FontAwesomeIcons.bold,
-                      texto: '',
+                      texto:
+                          'Toma conciencia del color azul dondequiera que aparezca en tu ambiente. Observa no sólo las instancias obvias, como el cielo, sino también las apariencias sutiles y todas las variantes del azul.',
                       color1: const Color.fromARGB(255, 74, 199, 237),
                       color2: const Color.fromARGB(255, 8, 102, 216),
                       onpress: () {}),

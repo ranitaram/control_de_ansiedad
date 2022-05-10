@@ -21,13 +21,8 @@ class Acuerdate21Page extends StatelessWidget {
                 children: [
                   BotonEjercicio(
                       icon: FontAwesomeIcons.bold,
-                      texto: '',
-                      color1: const Color.fromARGB(255, 74, 199, 237),
-                      color2: const Color.fromARGB(255, 8, 102, 216),
-                      onpress: () {}),
-                  BotonEjercicio(
-                      icon: FontAwesomeIcons.bold,
-                      texto: '',
+                      texto:
+                          'Pega cuadradillos de papel azul en toda la casa, en las puertas, en el refrigerador, etcétera. Cuando notes estos recordatorios, haz una pausa y busca el color azul. Puede ser cualquier matiz de azul.',
                       color1: const Color.fromARGB(255, 74, 199, 237),
                       color2: const Color.fromARGB(255, 8, 102, 216),
                       onpress: () {}),
