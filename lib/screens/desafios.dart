@@ -10,6 +10,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_20.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_21.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_22.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_23.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_24.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
@@ -299,7 +300,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 24: Un Bocado',
                   color1: const Color.fromARGB(255, 4, 109, 8),
                   color2: const Color.fromARGB(255, 254, 133, 5),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio24Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.star,
                   texto: 'Desafío 25: Deseos',

@@ -28,7 +28,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 //margin: EdgeInsets.symmetric(vertical: 3),
-                padding: EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -51,7 +51,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 5),
-                padding: EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -74,7 +74,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 10),
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -98,7 +98,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -123,7 +123,7 @@ class NivelDeAnsiedadPage extends StatelessWidget {
               ),
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
