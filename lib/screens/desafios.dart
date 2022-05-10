@@ -8,8 +8,10 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_19.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_2.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_20.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_21.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_22.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_23.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
-import 'package:control_de_ansiedad/screens/desafios/deasfio_4.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -275,13 +277,23 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 22: Pies',
                   color1: const Color.fromARGB(255, 237, 74, 231),
                   color2: const Color.fromARGB(255, 222, 4, 4),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio22Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.creativeCommonsZero,
-                  texto: 'Desafío 23: Vacio',
+                  texto: 'Desafío 23: Vacío',
                   color1: const Color.fromARGB(255, 225, 159, 46),
                   color2: const Color.fromARGB(255, 120, 108, 108),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio23Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.drumstickBite,
                   texto: 'Desafío 24: Un Bocado',
