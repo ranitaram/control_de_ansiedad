@@ -13,6 +13,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_23.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_24.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_25.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_26.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_27.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
@@ -335,7 +336,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 27: Zancada',
                   color1: const Color.fromARGB(255, 50, 123, 91),
                   color2: const Color.fromARGB(255, 92, 207, 227),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio27Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.water,
                   texto: 'Desafío 28: Líquido',
