@@ -15,6 +15,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_25.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_26.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_27.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_28.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_29.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
@@ -359,7 +360,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 29: Hacia arriba',
                   color1: const Color.fromARGB(255, 84, 0, 101),
                   color2: const Color.fromARGB(255, 27, 223, 220),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio29Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.dragon,
                   texto: 'Desafío 30: Definete',
