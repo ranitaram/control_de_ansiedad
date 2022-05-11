@@ -18,6 +18,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_28.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_29.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_30.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_31.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -383,7 +384,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 31: Olores',
                   color1: const Color.fromARGB(255, 237, 71, 5),
                   color2: const Color.fromARGB(255, 235, 209, 10),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio31Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.theaterMasks,
                   texto: 'Desafío 32: Esa persona Podría morir',
