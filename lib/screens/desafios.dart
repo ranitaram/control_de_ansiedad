@@ -19,6 +19,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_29.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_30.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_31.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_32.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -393,9 +394,14 @@ class DesafiosPage extends StatelessWidget {
               BotonGordo(
                   icon: FontAwesomeIcons.theaterMasks,
                   texto: 'Desafío 32: Esa persona Podría morir',
-                  color1: const Color.fromARGB(255, 36, 31, 29),
-                  color2: const Color.fromARGB(255, 6, 0, 0),
-                  onpress: () {}),
+                  color1: const Color.fromARGB(255, 193, 188, 187),
+                  color2: const Color.fromARGB(255, 235, 229, 39),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio32Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.cloudSunRain,
                   texto: 'Desafío 33: Temperatura',
