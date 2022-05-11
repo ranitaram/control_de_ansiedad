@@ -14,6 +14,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_24.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_25.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_26.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_27.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_28.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
@@ -347,7 +348,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 28: Líquido',
                   color1: const Color.fromARGB(255, 100, 108, 109),
                   color2: const Color.fromARGB(255, 199, 107, 208),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio28Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.cloudMoon,
                   texto: 'Desafío 29: Hacia arriba',
