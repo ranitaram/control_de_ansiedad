@@ -17,6 +17,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_27.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_28.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_29.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_30.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -368,10 +369,15 @@ class DesafiosPage extends StatelessWidget {
                   }),
               BotonGordo(
                   icon: FontAwesomeIcons.dragon,
-                  texto: 'Desafío 30: Definete',
+                  texto: 'Desafío 30: Defínete',
                   color1: const Color.fromARGB(255, 237, 28, 5),
-                  color2: const Color.fromARGB(255, 28, 4, 4),
-                  onpress: () {}),
+                  color2: Color.fromARGB(255, 96, 157, 241),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio30Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.java,
                   texto: 'Desafío 31: Olores',
