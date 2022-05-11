@@ -12,6 +12,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_22.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_23.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_24.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_25.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_26.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
@@ -323,7 +324,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 26: Examina el dolor',
                   color1: const Color.fromARGB(255, 208, 34, 22),
                   color2: const Color.fromARGB(255, 92, 227, 107),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio26Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.walking,
                   texto: 'Desafío 27: Zancada',
