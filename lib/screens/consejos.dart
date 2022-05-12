@@ -50,7 +50,7 @@ class ConsejosPage extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
-                      'Muchas personas con ataques de pánico pueden presentar dificultad para respirar, sudan profusamente, tiemblan y sienten el latido de sus corazones.',
+                      'Muchas personas con ataques de pánico pueden presentar dificultad para respirar, sudan profusamente, tiemblan y sienten el latido de su corazón.',
                       style: GoogleFonts.spaceMono(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),

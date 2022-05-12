@@ -21,6 +21,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_30.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_31.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_32.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_33.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_34.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -417,9 +418,14 @@ class DesafiosPage extends StatelessWidget {
               BotonGordo(
                   icon: FontAwesomeIcons.globeAmericas,
                   texto: 'Desafío 34: Planeta',
-                  color1: const Color.fromARGB(255, 79, 41, 0),
+                  color1: const Color.fromARGB(255, 38, 199, 162),
                   color2: const Color.fromARGB(255, 37, 87, 162),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio34Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.angry,
                   texto: 'Desafío 35: Lo qué no te gusta',
