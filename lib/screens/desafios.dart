@@ -20,6 +20,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_3.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_30.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_31.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_32.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_33.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -407,7 +408,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 33: Temperatura',
                   color1: const Color.fromARGB(255, 9, 197, 230),
                   color2: const Color.fromARGB(255, 237, 85, 4),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio33Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.globeAmericas,
                   texto: 'Desafío 34: Planeta',
