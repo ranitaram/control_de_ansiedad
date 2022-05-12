@@ -22,6 +22,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_31.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_32.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_33.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_34.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_35.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -431,7 +432,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 35: Lo qué no te gusta',
                   color1: const Color.fromARGB(255, 255, 44, 7),
                   color2: const Color.fromARGB(255, 225, 169, 203),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio35Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.exclamationTriangle,
                   texto: 'Desafío 36: ¿Ignoras algo?',
