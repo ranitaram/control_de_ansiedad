@@ -23,6 +23,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_32.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_33.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_34.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_35.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_36.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -443,7 +444,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 36: ¿Ignoras algo?',
                   color1: const Color.fromARGB(255, 255, 176, 7),
                   color2: const Color.fromARGB(255, 189, 36, 2),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio36Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.wind,
                   texto: 'Desafío 37: Viento',
