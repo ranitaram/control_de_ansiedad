@@ -28,6 +28,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_37.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_38.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_39.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_40.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -491,7 +492,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 40: Envejecimiento',
                   color1: const Color.fromARGB(255, 137, 142, 136),
                   color2: const Color.fromARGB(255, 20, 72, 68),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio40Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.userClock,
                   texto: 'Desafío 41: Puntual',
