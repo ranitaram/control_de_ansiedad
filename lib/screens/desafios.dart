@@ -24,6 +24,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_33.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_34.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_35.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_36.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_37.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -455,7 +456,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 37: Viento',
                   color1: const Color.fromARGB(255, 139, 148, 167),
                   color2: const Color.fromARGB(255, 49, 60, 96),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio37Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.assistiveListeningSystems,
                   texto: 'Desafío 38: Escucha',
