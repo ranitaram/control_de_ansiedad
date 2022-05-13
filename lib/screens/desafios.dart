@@ -26,6 +26,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_35.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_36.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_37.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_38.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_39.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
@@ -479,7 +480,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 39: Gratitud',
                   color1: const Color.fromARGB(255, 86, 142, 81),
                   color2: const Color.fromARGB(255, 5, 232, 217),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio39Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.oldRepublic,
                   texto: 'Desafío 40: Envejecimiento',
