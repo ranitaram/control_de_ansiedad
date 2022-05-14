@@ -34,6 +34,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_42.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_43.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_44.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_45.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_46.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -560,10 +561,15 @@ class DesafiosPage extends StatelessWidget {
                   }),
               BotonGordo(
                   icon: FontAwesomeIcons.carSide,
-                  texto: 'Desafío 45: Conduce en el presente',
+                  texto: 'Desafío 46: Conduce en el presente',
                   color1: const Color.fromARGB(255, 75, 73, 73),
                   color2: const Color.fromARGB(255, 0, 255, 255),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio46Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.pizzaSlice,
                   texto: 'Desafío 47: Observa la comida',
