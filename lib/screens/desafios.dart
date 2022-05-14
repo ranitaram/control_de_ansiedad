@@ -31,6 +31,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_40.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_41.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_42.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_43.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -527,11 +528,16 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 43: Sentido del gusto',
                   color1: const Color.fromARGB(255, 146, 230, 10),
                   color2: const Color.fromARGB(255, 225, 166, 18),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio43Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.tired,
                   texto: 'Desafío 44: Ávido',
-                  color1: const Color.fromARGB(255, 0, 0, 0),
+                  color1: Color.fromARGB(255, 154, 162, 167),
                   color2: const Color.fromARGB(255, 225, 18, 149),
                   onpress: () {}),
               BotonGordo(
