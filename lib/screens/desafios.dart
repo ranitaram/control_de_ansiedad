@@ -30,6 +30,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_39.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_40.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_41.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_42.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -511,11 +512,16 @@ class DesafiosPage extends StatelessWidget {
                             builder: (contex) => Desafio41Page()));
                   }),
               BotonGordo(
-                  icon: FontAwesomeIcons.playstation,
+                  icon: FontAwesomeIcons.gamepad,
                   texto: 'Desafío 42: Procrastinación',
                   color1: const Color.fromARGB(255, 5, 106, 230),
                   color2: const Color.fromARGB(255, 118, 175, 210),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio42Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.wineGlass,
                   texto: 'Desafío 43: Sentido del gusto',
