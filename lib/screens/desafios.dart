@@ -35,6 +35,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_43.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_44.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_45.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_46.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_47.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -575,7 +576,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 47: Observa la comida',
                   color1: const Color.fromARGB(255, 242, 118, 41),
                   color2: const Color.fromARGB(255, 167, 75, 232),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio47Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.sun,
                   texto: 'Desafío 48: Luz',
