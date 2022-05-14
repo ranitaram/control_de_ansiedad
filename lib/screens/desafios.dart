@@ -33,6 +33,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_41.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_42.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_43.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_44.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_45.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -551,7 +552,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 45: Ansiedad',
                   color1: const Color.fromARGB(255, 147, 57, 57),
                   color2: const Color.fromARGB(255, 14, 152, 92),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio45Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.carSide,
                   texto: 'Desafío 45: Conduce en el presente',
