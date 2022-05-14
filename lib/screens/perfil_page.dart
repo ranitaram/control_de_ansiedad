@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:control_de_ansiedad/models/usuario.dart';
@@ -18,6 +19,8 @@ class PerfilPage extends StatefulWidget {
 
 class _PerfilPageState extends State<PerfilPage> {
   late String? url;
+  XFile? imagen;
+  String imageBase64 = "";
 
   @override
   Widget build(BuildContext context) {
@@ -39,52 +42,72 @@ class _PerfilPageState extends State<PerfilPage> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(80),
                           child: Container(
-                            width: 150,
-                            height: 150,
-                            child:
-                                //const Image(
-                                //     image: AssetImage('assets/no-image.png')),
-                                ('${usuario.img}' != null)
-                                    ? FadeInImage(
-                                        imageErrorBuilder:
-                                            (context, error, stackTrace) {
-                                          return Container(
-                                            width: 150,
-                                            height: 150,
-                                            child: const Image(
-                                                image: AssetImage(
-                                                    'assets/no-image.png')),
-                                          );
-                                        },
-                                        placeholder: const AssetImage(
-                                            'assets/loading-1.gif'),
-                                        image: NetworkImage('${usuario.img}'))
-                                    : const Image(
-                                        image:
-                                            AssetImage('assets/logonegro.png')),
-                            decoration:
-                                const BoxDecoration(color: Colors.transparent),
-                          ),
+                              width: 150,
+                              height: 150,
+                              // decoration: BoxDecoration(
+                              //   color: Colors.transparent,
+                              // ),
+                              child: imageBase64 != null
+                                  ? usuario.img == ""
+                                      ? const Image(
+                                          image:
+                                              AssetImage('assets/no-image.png'))
+                                      : FadeInImage(
+                                          placeholder: const AssetImage(
+                                              'assets/loading-1.gif'),
+                                          image: NetworkImage('${usuario.img}'))
+                                  : Image.file(
+                                      File(imagen!.path),
+                                      fit: BoxFit.cover,
+                                    )
+                              // const Image(
+                              //     image: AssetImage('assets/no-image.png'))
+                              //     ('${usuario.img}' != null)
+                              //         ? FadeInImage(
+                              //             imageErrorBuilder:
+                              //                 (context, error, stackTrace) {
+                              //               return Container(
+                              //                 width: 150,
+                              //                 height: 150,
+                              //                 child: const Image(
+                              //                     image: AssetImage(
+                              //                         'assets/no-image.png')),
+                              //               );
+                              //             },
+                              //             placeholder: const AssetImage(
+                              //                 'assets/loading-1.gif'),
+                              //             image: NetworkImage('${usuario.img}'))
+                              //         : const Image(
+                              //             image:
+                              //                 AssetImage('assets/logonegro.png')),
+                              // decoration:
+                              //     const BoxDecoration(color: Colors.transparent),
+                              ),
                         )),
                   ),
                   Positioned(
-                    right: 85,
+                    right: 100,
                     top: 120,
                     child: IconButton(
-                        color: Color.fromARGB(255, 0, 0, 0),
+                        color: Color.fromARGB(255, 101, 21, 175),
                         iconSize: 50,
                         onPressed: () async {
                           final picker = ImagePicker();
-                          final XFile? pickedFile = await picker.pickImage(
+                          imagen = await picker.pickImage(
                               source: ImageSource.gallery, imageQuality: 100);
 
-                          if (pickedFile == null) {
-                            print('No seleccionó nada');
-                            return;
+                          if (imagen != null) {
+                            final bytes = File(imagen!.path).readAsBytesSync();
+                            imageBase64 = base64Encode(bytes);
+                            print(imageBase64);
                           }
-                          print('Tenemos imagen ${pickedFile.path}');
-                          authService
-                              .updateSelectedUsuarioImage(pickedFile.path);
+                          setState(() {});
+                          // if (imagen == null) {
+                          //   print('No seleccionó nada');
+                          //   return;
+                          // }
+                          // print('Tenemos imagen ${imagen!.path}');
+                          // authService.updateSelectedUsuarioImage(imagen!.path);
 
                           // final String? imageUrl =
                           //     await authService.uploadImage();

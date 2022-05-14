@@ -29,6 +29,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_38.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_39.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_4.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_40.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_41.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -503,7 +504,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 41: Puntual',
                   color1: const Color.fromARGB(255, 211, 47, 47),
                   color2: const Color.fromARGB(255, 99, 74, 22),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio41Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.playstation,
                   texto: 'Desafío 42: Procrastinación',
