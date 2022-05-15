@@ -37,6 +37,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_45.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_46.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_47.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_48.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_49.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
@@ -597,9 +598,14 @@ class DesafiosPage extends StatelessWidget {
               BotonGordo(
                   icon: FontAwesomeIcons.microscope,
                   texto: 'Desafío 49: Checa tu estómago',
-                  color1: const Color.fromARGB(255, 94, 3, 103),
+                  color1: const Color.fromARGB(255, 197, 27, 213),
                   color2: const Color.fromARGB(255, 174, 172, 174),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio49Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.brain,
                   texto: 'Desafío 50: Conciencia',
