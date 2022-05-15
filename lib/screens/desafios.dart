@@ -40,6 +40,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_48.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_49.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_50.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_51.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_8.dart';
@@ -623,7 +624,12 @@ class DesafiosPage extends StatelessWidget {
                   texto: 'Desafío 51: Cuerpo',
                   color1: const Color.fromARGB(255, 1, 160, 158),
                   color2: const Color.fromARGB(255, 101, 65, 3),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio51Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.smile,
                   texto: 'Desafío 52: Sonríe',
