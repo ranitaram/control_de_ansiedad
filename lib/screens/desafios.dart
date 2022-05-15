@@ -39,6 +39,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_47.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_48.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_49.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_50.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_8.dart';
@@ -608,10 +609,15 @@ class DesafiosPage extends StatelessWidget {
                   }),
               BotonGordo(
                   icon: FontAwesomeIcons.brain,
-                  texto: 'Desafío 50: Conciencia',
+                  texto: 'Desafío 50: Gravedad',
                   color1: const Color.fromARGB(255, 164, 10, 120),
                   color2: const Color.fromARGB(255, 6, 154, 6),
-                  onpress: () {}),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio50Page()));
+                  }),
               BotonGordo(
                   icon: FontAwesomeIcons.userAlt,
                   texto: 'Desafío 51: Cuerpo',
