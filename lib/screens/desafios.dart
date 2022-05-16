@@ -42,6 +42,7 @@ import 'package:control_de_ansiedad/screens/desafios/desafio_5.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_50.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_51.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_52.dart';
+import 'package:control_de_ansiedad/screens/desafios/desafio_53.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_6.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_7.dart';
 import 'package:control_de_ansiedad/screens/desafios/desafio_8.dart';
@@ -646,8 +647,13 @@ class DesafiosPage extends StatelessWidget {
                   icon: FontAwesomeIcons.userNinja,
                   texto: 'Desafío 53: Mejora las cosas',
                   color1: const Color.fromARGB(255, 237, 47, 4),
-                  color2: const Color.fromARGB(255, 0, 0, 0),
-                  onpress: () {}),
+                  color2: const Color.fromARGB(255, 204, 193, 193),
+                  onpress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (contex) => Desafio53Page()));
+                  }),
             ],
           ),
         ),
