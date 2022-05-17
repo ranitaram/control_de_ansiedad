@@ -457,7 +457,7 @@ class DesafiosPage extends StatelessWidget {
                             builder: (contex) => Desafio35Page()));
                   }),
               BotonGordo(
-                  icon: FontAwesomeIcons.exclamationTriangle,
+                  icon: FontAwesomeIcons.question,
                   texto: 'Desafío 36: ¿Ignoras algo?',
                   color1: const Color.fromARGB(255, 255, 176, 7),
                   color2: const Color.fromARGB(255, 189, 36, 2),

@@ -19,7 +19,7 @@ class Desafio36Page extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 children: [
                   BotonEjercicio(
-                      icon: FontAwesomeIcons.exclamationTriangle,
+                      icon: FontAwesomeIcons.question,
                       texto:
                           'Varias veces por día, haz una pausa para notar a qué le estás prestando atención en ese momento y luego abre los sentidos para ver si puedes descubrir lo que no has logrado notar. Nuestra atención suele ser selectiva. ¿Qué estás ignorando?',
                       color1: const Color.fromARGB(255, 255, 176, 7),

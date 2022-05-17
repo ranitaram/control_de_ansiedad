@@ -47,19 +47,29 @@ class _PerfilPageState extends State<PerfilPage> {
                               // decoration: BoxDecoration(
                               //   color: Colors.transparent,
                               // ),
-                              child: imageBase64 != null
-                                  ? usuario.img == ""
-                                      ? const Image(
-                                          image:
-                                              AssetImage('assets/no-image.png'))
-                                      : FadeInImage(
-                                          placeholder: const AssetImage(
-                                              'assets/loading-1.gif'),
-                                          image: NetworkImage('${usuario.img}'))
-                                  : Image.file(
+                              child: imagen != null
+                                  ? Image.file(
                                       File(imagen!.path),
                                       fit: BoxFit.cover,
                                     )
+                                  : const Image(
+                                      image: AssetImage('assets/no-image.png'),
+                                      fit: BoxFit.cover,
+                                    )
+                              // imageBase64 == null
+                              //     ? usuario.img == ""
+                              //         ? const Image(
+                              //             image:
+                              //                 AssetImage('assets/no-image.png'))
+                              //         : FadeInImage(
+                              //             placeholder: const AssetImage(
+                              //                 'assets/loading-1.gif'),
+                              //             image: NetworkImage('${usuario.img}'))
+                              //     : Image.file(
+                              //         File(imagen!.path),
+                              //         fit: BoxFit.cover,
+                              ////////////////////////////////////////////
+                              //       )
                               // const Image(
                               //     image: AssetImage('assets/no-image.png'))
                               //     ('${usuario.img}' != null)
@@ -280,10 +290,16 @@ class _Nombre extends StatelessWidget {
   }
 }
 
-// Widget getImage(String? imagen){
+// getImage(String? imagenBase6) {
+   
 
-//  if (imagen == null)
-//  return
- 
-                                 
+
+//   if (imagenBase6 != null) {
+//     return const Image(image: AssetImage('assets/no-image.png'));
+//   } else {
+//     if (imagenBase6!.startsWith('http'))
+//       return FadeInImage(
+//           placeholder: AssetImage('assets/loading-1.gif'),
+//           image: NetworkImage(''));
+//   }
 // }

@@ -20,7 +20,7 @@ class Acuerdate36Page extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 children: [
                   BotonEjercicio(
-                      icon: FontAwesomeIcons.exclamationTriangle,
+                      icon: FontAwesomeIcons.question,
                       texto:
                           'Coloca notas en tu ambiente con la pregunta: “¿Estoy ignorando?” (¡No ignores las notas!) Podrías también poner un despertador que te ayude a detenerte varias veces por día para hacer esta práctica.',
                       color1: const Color.fromARGB(255, 255, 176, 7),
